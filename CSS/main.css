@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: black;
+}
+
+.styles, header > h3, .styles--b, .title--company, .title--position {
+  font-family: "Open Sans", sans-serif;
+}
+
+/*Side left*/
+aside {
+  flex: 1;
+  flex-shrink: 2;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+  background-color: #0077B5;
+}
+
+.img--box {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+  padding: 1.25em;
+}
+
+img {
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+}
+
+.styles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit {
+  padding: 0.5em 0;
+  background-color: #B0BEC5;
+  color: #0077B5;
+}
+
+.contact {
+  flex: 1;
+  padding: 1.25em 1.25em;
+  color: #B0BEC5;
+}
+
+a {
+  color: #B0BEC5;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  color: #e1e9ef;
+}
+
+.align--about {
+  flex: 3;
+  display: flex;
+  padding: 1.25em 1.25em;
+  text-align: justify;
+  color: #B0BEC5;
+}
+
+#list-inline {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.icons {
+  padding: 1.25em 1.25em;
+}
+
+i {
+  text-shadow: 2px 4px 6px #424242;
+}
+
+.fa-swimmer, .fa-table-tennis, .fa-hiking {
+  font-size: 3em;
+  padding-top: 0.3em;
+}
+
+/*Right Side (Main Side)*/
+main {
+  flex: 2;
+  flex-shrink: 1;
+  display: flex;
+  flex-flow: column wrap;
+  padding: 1.25em;
+  background-color: white;
+}
+
+.fa-circle {
+  position: relative;
+  bottom: -0.1em;
+  font-size: 0.7em;
+  color: #0077B5;
+}
+
+.fa-pen-fancy, .fa-briefcase, .fa-graduation-cap {
+  font-size: 2em;
+  color: #0077B5;
+}
+
+header {
+  flex: 2;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  flex-basis: 16em;
+}
+
+header > h3 {
+  font-size: 1.5em;
+}
+
+header > h1 {
+  font-size: 2.5em;
+}
+
+.small--line {
+  text-decoration: underline;
+  -webkit-text-decoration-color: #0077B5;
+          text-decoration-color: #0077B5;
+}
+
+.front {
+  color: #f6b29d;
+  font-family: Helvetica, Helvetica, Arial, sans-serif;
+  font-weight: 100;
+}
+
+.education {
+  position: relative;
+  top: 1%;
+  border: none;
+  height: 0.16em;
+  margin-bottom: 1.5em;
+  background: #0077B5;
+}
+
+.styles--b {
+  display: flex;
+}
+
+.component {
+  position: relative;
+  font-size: 1.3em;
+  bottom: -0.3em;
+}
+
+.box {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1.25em 0;
+}
+
+.alignment {
+  flex: 1;
+  display: flex;
+  margin-top: 0.3em;
+}
+
+.title--right {
+  flex: 2;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.title--position {
+  font-size: 1.2em;
+  margin-bottom: 0.7em;
+  margin-top: 0.7em;
+}
+
+.title--company {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+.arrengement--references {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 1.25em 0;
+}
+
+/*Tablet Styles*/
+@media only screen and (max-width: 768px) {
+  .arrengement--references {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: stretch;
+    align-content: center;
+    padding: 1.25em 0;
+  }
+}
+/* Mobile Styles */
+@media only screen and (max-width: 460px) {
+  body {
+    flex-flow: column wrap;
+  }
+
+  .img--box {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    padding: 1.25em;
+  }
+
+  img {
+    width: 30%;
+    height: 30%;
+    border-radius: 50%;
+  }
+
+  main {
+    background-color: #0077B5;
+    color: #B0BEC5;
+  }
+
+  header {
+    margin-top: -2em;
+  }
+
+  .styles--b {
+    justify-content: center;
+  }
+
+  .small--line {
+    text-decoration: underline;
+    -webkit-text-decoration-color: #0077B5;
+            text-decoration-color: #0077B5;
+  }
+
+  .component {
+    font-size: 1em;
+  }
+
+  .fa-circle {
+    position: relative;
+    bottom: -0.1em;
+    font-size: 0.7em;
+    color: #B0BEC5;
+  }
+
+  .education {
+    display: none;
+  }
+
+  .small--line {
+    -webkit-text-decoration-color: #f6b29d;
+            text-decoration-color: #f6b29d;
+  }
+
+  .component {
+    bottom: 0;
+  }
+
+  .fa-pen-fancy, .fa-briefcase, .fa-graduation-cap {
+    font-size: 1.33em;
+    color: #B0BEC5;
+  }
+}
