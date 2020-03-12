@@ -38,7 +38,7 @@ h1 {
 .nav-bar  a:hover {
         background-color: rgba(246, 247, 248, 0.6);
 	color: #75ABBC;
-        border-radius: 3%;
+        border-radius: 5%;
 }
 
 #toggle {
@@ -102,5 +102,9 @@ h1 {
 
         .nav-bar h1{
                 display: none;
+        }
+
+        .nav-bar a {
+        	padding: 14px 100%;
         }
 }
