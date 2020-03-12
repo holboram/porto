@@ -7,38 +7,32 @@
         padding: 0;
 }
 
-.avatar {
-        border-radius: 50%;
-}
-
-h1 {
-        font-family: 'Montserrat Subrayada', sans-serif;
-        color: #3D3E3E;
-}
-
 .nav-bar {
         background-color: #75ABBC;
 	display: flex;
 	justify-content: center;
         align-items: center;
+        &__avatar {
+                border-radius: 50%;
+                padding: 5px 40px;
+        }
 }
 
-.nav-bar img {
-        padding: 5px 40px;
-}
-
-.nav-bar a {
+.link {
         color: #DFE0E2;
 	text-align: center;
 	font-weight: bold;
 	text-decoration: none;
 	padding: 14px 28px;
-}
-
-.nav-bar  a:hover {
-        background-color: rgba(246, 247, 248, 0.6);
-	color: #75ABBC;
-        border-radius: 5%;
+        &:hover {
+                background-color: rgba(246, 247, 248, 0.6);
+                color: #75ABBC;
+                border-radius: 5%;
+        }
+        &__logo {
+                font-family: 'Montserrat Subrayada', sans-serif;
+                color: #3D3E3E;
+        }
 }
 
 #toggle {
@@ -55,12 +49,16 @@ h1 {
         align-items: center;
 }
 
-.toggle-area a {
+.link-tg {
         text-decoration: none;
         margin: 0 auto;
+        &__logo {
+                font-family: 'Montserrat Subrayada', sans-serif;
+                color: #3D3E3E;
+        }
 }
 
-.toggle-area label {
+.label {
         background-color: #75ABBC;
         height: 45px;
         width: 50px;
@@ -70,13 +68,12 @@ h1 {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-}
-
-.toggle-area label span {
-        background-color: black;
-        height: 4px;
-        width: 70%;
-        margin: 2px 0;
+        &__line {
+                background-color: black;
+                height: 4px;
+                width: 70%;
+                margin: 2px 0;
+        }
 }
 
 .toggle-area {
@@ -87,6 +84,9 @@ h1 {
         .nav-bar {
                 flex-direction: column;
                 display: none;
+                &__avatar {
+                        display: none;
+                }
         }
         #toggle:checked + .nav-bar {
                 display: flex;
@@ -96,15 +96,11 @@ h1 {
                 display: flex;
         }
 
-        .nav-bar img{
+        .link__logo {
                 display: none;
         }
 
-        .nav-bar h1{
-                display: none;
-        }
-
-        .nav-bar a {
+        .link {
         	padding: 14px 100%;
         }
 }
