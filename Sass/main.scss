@@ -87,17 +87,17 @@
                 &__avatar {
                         display: none;
                 }
+                &__link-lg {
+                        display: none;
+                }
         }
+
         #toggle:checked + .nav-bar {
                 display: flex;
         }
 
         .toggle-area {
                 display: flex;
-        }
-
-        .link__logo {
-                display: none;
         }
 
         .link {

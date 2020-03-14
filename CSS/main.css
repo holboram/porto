@@ -87,6 +87,9 @@
   .nav-bar__avatar {
     display: none;
   }
+  .nav-bar__link-lg {
+    display: none;
+  }
 
   #toggle:checked + .nav-bar {
     display: flex;
@@ -94,10 +97,6 @@
 
   .toggle-area {
     display: flex;
-  }
-
-  .link__logo {
-    display: none;
   }
 
   .link {
