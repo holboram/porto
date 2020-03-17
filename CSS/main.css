@@ -18,7 +18,7 @@
 }
 
 .link {
-  color: #DFE0E2;
+  color: #f6f7f8;
   text-align: center;
   font-weight: bold;
   text-decoration: none;
@@ -40,28 +40,24 @@
 
 .toggle-area {
   background-color: #75ABBC;
-  border-bottom: 2px solid white;
-  color: white;
+  border-bottom: 2px solid #f6f7f8;
   padding: 10px;
-  display: flex;
+  display: none;
   justify-content: flex-end;
   align-items: center;
 }
-
-.link-tg {
+.toggle-area__link-tg {
   text-decoration: none;
   margin: 0 auto;
 }
-.link-tg__logo {
+.toggle-area__logo {
   font-family: "Montserrat Subrayada", sans-serif;
   color: #3D3E3E;
 }
 
 .label {
-  background-color: #75ABBC;
   height: 45px;
   width: 50px;
-  color: black;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -75,19 +71,12 @@
   margin: 2px 0;
 }
 
-.toggle-area {
-  display: none;
-}
-
 @media screen and (max-width: 640px) {
   .nav-bar {
     flex-direction: column;
     display: none;
   }
-  .nav-bar__avatar {
-    display: none;
-  }
-  .nav-bar__link-lg {
+  .nav-bar__avatar, .nav-bar__link-lg {
     display: none;
   }
 

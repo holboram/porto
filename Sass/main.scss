@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada:700&display=swap');
 
+$primary-color: #75ABBC;
+$secondary-color: #3D3E3E;
+$tertiary-color: rgba(246, 247, 248, 1);
+
+@mixin logo {
+        font-family: 'Montserrat Subrayada', sans-serif;
+        color: $secondary-color;
+}
+
 * {
         box-sizing: border-box;
         margin: 0;
@@ -8,7 +17,7 @@
 }
 
 .nav-bar {
-        background-color: #75ABBC;
+        background-color: $primary-color;
 	display: flex;
 	justify-content: center;
         align-items: center;
@@ -19,19 +28,18 @@
 }
 
 .link {
-        color: #DFE0E2;
+        color: $tertiary-color;
 	text-align: center;
 	font-weight: bold;
 	text-decoration: none;
 	padding: 14px 28px;
         &:hover {
                 background-color: rgba(246, 247, 248, 0.6);
-                color: #75ABBC;
+                color: $primary-color;
                 border-radius: 5%;
         }
         &__logo {
-                font-family: 'Montserrat Subrayada', sans-serif;
-                color: #3D3E3E;
+                @include logo;
         }
 }
 
@@ -40,29 +48,24 @@
 }
 
 .toggle-area {
-        background-color: #75ABBC;
-        border-bottom: 2px solid white;
-        color: white;
+        background-color: $primary-color;
+        border-bottom: 2px solid $tertiary-color;
         padding: 10px;
-        display: flex;
+        display: none;
         justify-content: flex-end;
         align-items: center;
-}
-
-.link-tg {
-        text-decoration: none;
-        margin: 0 auto;
+        &__link-tg {
+                text-decoration: none;
+                margin: 0 auto;
+        }
         &__logo {
-                font-family: 'Montserrat Subrayada', sans-serif;
-                color: #3D3E3E;
+                @include logo;
         }
 }
 
 .label {
-        background-color: #75ABBC;
         height: 45px;
         width: 50px;
-        color: black;
         cursor: pointer;
         display: flex;
         justify-content: center;
@@ -76,18 +79,11 @@
         }
 }
 
-.toggle-area {
-        display: none;
-}
-
 @media screen and (max-width: 640px) {
         .nav-bar {
                 flex-direction: column;
                 display: none;
-                &__avatar {
-                        display: none;
-                }
-                &__link-lg {
+                &__avatar, &__link-lg {
                         display: none;
                 }
         }
