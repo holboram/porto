@@ -1,37 +1,68 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:500&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Montserrat+Subrayada:700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat+Subrayada|Roboto&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+body {
+  font-family: "Roboto", sans-serif;
+}
+
 .nav-bar {
-  background-color: #75ABBC;
+  background-color: #5D3B77;
   display: flex;
-  justify-content: center;
   align-items: center;
+  padding: 15px 100px;
 }
 .nav-bar__avatar {
   border-radius: 50%;
-  padding: 5px 40px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-bar__link-lg {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  margin: auto 20px;
+}
+.nav-bar__logo {
+  font-family: "Montserrat Subrayada", sans-serif;
+  color: #F1C40F;
+  transform: scale(1.2);
+  transition: all 1000ms;
+}
+.nav-bar__logo:hover {
+  transform: scale(1.8);
+}
+.nav-bar__nav-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .link {
   color: #f6f7f8;
   text-align: center;
   font-weight: bold;
+  font-size: 22px;
   text-decoration: none;
   padding: 14px 28px;
+  transform: scale(1);
+  transition: transform 800ms, border-radius 500ms 100ms, color 700ms 100ms;
 }
-.link:hover {
-  background-color: rgba(246, 247, 248, 0.6);
-  color: #75ABBC;
-  border-radius: 5%;
+.link:hover:not(.nav-bar__link-lg) {
+  background-color: #f1c40f;
+  color: #5D3B77;
+  border-radius: 50%;
+  transform: scale(1.22);
 }
 .link__logo {
   font-family: "Montserrat Subrayada", sans-serif;
-  color: #3D3E3E;
+  color: #F1C40F;
+  transform: scale(1.2);
+  transition: all 1000ms;
 }
 
 #toggle {
@@ -39,9 +70,9 @@
 }
 
 .toggle-area {
-  background-color: #75ABBC;
+  background-color: #5D3B77;
   border-bottom: 2px solid #f6f7f8;
-  padding: 10px;
+  padding: 10px 40px;
   display: none;
   justify-content: flex-end;
   align-items: center;
@@ -52,7 +83,12 @@
 }
 .toggle-area__logo {
   font-family: "Montserrat Subrayada", sans-serif;
-  color: #3D3E3E;
+  color: #F1C40F;
+  transform: scale(1.2);
+  transition: all 1000ms;
+}
+.toggle-area__logo:hover {
+  transform: scale(1.2);
 }
 
 .label {
@@ -71,7 +107,44 @@
   margin: 2px 0;
 }
 
-@media screen and (max-width: 640px) {
+.footer {
+  margin-top: 2em;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 4em;
+}
+
+.two {
+  max-width: 30%;
+}
+
+.two > img {
+  float: left;
+  margin-right: 7px;
+  border: black solid 4px;
+}
+
+.bio-info {
+  margin-bottom: 15px;
+}
+
+.social {
+  list-style: none;
+}
+
+li {
+  display: flex;
+}
+
+@media screen and (max-width: 900px) {
   .nav-bar {
     flex-direction: column;
     display: none;
@@ -84,11 +157,28 @@
     display: flex;
   }
 
+  .nav-bar__nav-right {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
   .toggle-area {
     display: flex;
   }
 
   .link {
     padding: 14px 100%;
+  }
+
+  .links {
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-content: center;
+  }
+
+  .two {
+    max-width: 70%;
+    margin-bottom: 2em;
   }
 }

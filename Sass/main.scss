@@ -1,14 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada|Roboto&display=swap');
 
-$primary-color: #75ABBC;
-$secondary-color: #3D3E3E;
+$primary-color: #5D3B77;
+$secondary-color: #F1C40F;
 $tertiary-color: rgba(246, 247, 248, 1);
 
 @mixin logo {
         font-family: 'Montserrat Subrayada', sans-serif;
         color: $secondary-color;
+        transform: scale(1.2);
+        transition: all 1000ms;
 }
+
+$padding: (avatar: (15px 100px), link: (14px 28px), toggle: (10px 40px), breakpoint-link: (14px 100%));
+$fonts: (logo2: 16px, nav-right: 22px);
 
 * {
         box-sizing: border-box;
@@ -16,14 +20,37 @@ $tertiary-color: rgba(246, 247, 248, 1);
         padding: 0;
 }
 
+body {
+        font-family: 'Roboto', sans-serif;
+}
+
 .nav-bar {
         background-color: $primary-color;
 	display: flex;
-	justify-content: center;
         align-items: center;
+        padding: map-get($padding, avatar);
         &__avatar {
                 border-radius: 50%;
-                padding: 5px 40px;
+                padding-right: 20px;
+                padding-left: 20px;
+        }
+        &__link-lg {
+                flex: 2;
+                display: flex;
+                justify-content: center;
+                text-decoration: none;
+                margin: auto 20px;
+        }
+        &__logo {
+                @include logo;
+                &:hover {
+                        transform: scale(1.8);
+                }
+        }
+        &__nav-right {
+                flex: 1;
+                display: flex;
+                justify-content: flex-end;
         }
 }
 
@@ -31,12 +58,16 @@ $tertiary-color: rgba(246, 247, 248, 1);
         color: $tertiary-color;
 	text-align: center;
 	font-weight: bold;
+        font-size: map-get($fonts, nav-right);
 	text-decoration: none;
-	padding: 14px 28px;
-        &:hover {
-                background-color: rgba(246, 247, 248, 0.6);
+	padding: map-get($padding, link);
+        transform: scale(1);
+        transition: transform 800ms, border-radius 500ms 100ms, color 700ms 100ms;
+        &:hover:not(.nav-bar__link-lg) {
+                background-color: rgba(241,196,15);
                 color: $primary-color;
-                border-radius: 5%;
+                border-radius: 50%;
+                transform: scale(1.22);
         }
         &__logo {
                 @include logo;
@@ -50,7 +81,7 @@ $tertiary-color: rgba(246, 247, 248, 1);
 .toggle-area {
         background-color: $primary-color;
         border-bottom: 2px solid $tertiary-color;
-        padding: 10px;
+        padding: map-get($padding, toggle);
         display: none;
         justify-content: flex-end;
         align-items: center;
@@ -60,6 +91,9 @@ $tertiary-color: rgba(246, 247, 248, 1);
         }
         &__logo {
                 @include logo;
+                &:hover {
+                        transform: scale(1.2);
+                }
         }
 }
 
@@ -79,7 +113,44 @@ $tertiary-color: rgba(246, 247, 248, 1);
         }
 }
 
-@media screen and (max-width: 640px) {
+.footer {
+        margin-top: 2em;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+}
+
+.links {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 4em;
+}
+
+.two {
+        max-width: 30%;
+}
+
+.two > img {
+        float: left;
+        margin-right: 7px;
+        border: black solid 4px;
+}
+
+.bio-info {
+        margin-bottom: 15px;
+}
+
+.social {
+        list-style: none;
+}
+
+li {
+        display: flex;
+}
+
+@media screen and (max-width: 900px) {
         .nav-bar {
                 flex-direction: column;
                 display: none;
@@ -92,11 +163,28 @@ $tertiary-color: rgba(246, 247, 248, 1);
                 display: flex;
         }
 
+        .nav-bar__nav-right {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+        }
+
         .toggle-area {
                 display: flex;
         }
 
         .link {
-        	padding: 14px 100%;
+        	padding: map-get($padding, breakpoint-link);
+        }
+
+        .links {
+                flex-flow: column wrap;
+                justify-content: space-around;
+                align-content: center;
+        }
+
+        .two{
+                max-width: 70%;
+                margin-bottom: 2em;
         }
 }
