@@ -24,6 +24,14 @@ body {
         font-family: 'Roboto', sans-serif;
 }
 
+a {
+        text-decoration: none;
+}
+
+.small {
+        display: none;
+}
+
 .nav-bar {
         background-color: $primary-color;
 	display: flex;
@@ -38,7 +46,6 @@ body {
                 flex: 2;
                 display: flex;
                 justify-content: center;
-                text-decoration: none;
                 margin: auto 20px;
         }
         &__logo {
@@ -59,7 +66,6 @@ body {
 	text-align: center;
 	font-weight: bold;
         font-size: map-get($fonts, nav-right);
-	text-decoration: none;
 	padding: map-get($padding, link);
         transform: scale(1);
         transition: transform 800ms, border-radius 500ms 100ms, color 700ms 100ms;
@@ -86,7 +92,6 @@ body {
         justify-content: flex-end;
         align-items: center;
         &__link-tg {
-                text-decoration: none;
                 margin: 0 auto;
         }
         &__logo {
@@ -113,8 +118,26 @@ body {
         }
 }
 
+.title-container{
+        max-width: 100%;
+        height: 45em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 40px 20px 30px;
+        text-align: center;
+        &__title {
+                max-width: 40%;
+                display: flex;
+                flex-direction: column;
+                // align-items: center;
+                padding: 40px 10px;
+        }
+}
+
 .footer {
-        margin-top: 2em;
+        margin: 2em 15em 1.5em 15em;
         display: flex;
         flex-flow: column wrap;
         align-items: center;
@@ -129,7 +152,7 @@ body {
 }
 
 .two {
-        max-width: 30%;
+        max-width: 50%;
 }
 
 .two > img {
@@ -139,15 +162,39 @@ body {
 }
 
 .bio-info {
+        text-align: justify;
         margin-bottom: 15px;
 }
 
 .social {
+        align-self: flex-start;
         list-style: none;
+        margin-left: 55px;
 }
 
 li {
         display: flex;
+}
+
+.icons-footer {
+        color: black;
+        font-size: 30px;
+        padding-right: 7px;
+}
+
+@media screen and (max-width: 1408px) {
+
+        .social p {
+                display: none;
+        }
+
+        .small{
+                display: flex;
+        }
+
+        .icons-footer {
+                padding-left: 7px;
+        }
 }
 
 @media screen and (max-width: 900px) {
@@ -177,6 +224,15 @@ li {
         	padding: map-get($padding, breakpoint-link);
         }
 
+        .title-container {
+                transform: scale(0.7);
+                height: 22.5em;
+        }
+
+        .footer {
+                margin: 2em 0 0 0;
+        }
+
         .links {
                 flex-flow: column wrap;
                 justify-content: space-around;
@@ -187,4 +243,17 @@ li {
                 max-width: 70%;
                 margin-bottom: 2em;
         }
+
+        .social {
+                margin: 0 auto;
+                width: 100%;
+               display: flex;
+               justify-content: center;
+       }
+
+       .small {
+               display: none;
+       }
+
+
 }
