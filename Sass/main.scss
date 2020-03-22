@@ -1,18 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada|Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Baloo+2|Roboto:500&display=swap');
 
-$primary-color: #5D3B77;
-$secondary-color: #F1C40F;
-$tertiary-color: rgba(246, 247, 248, 1);
+$primary-color: #141824;
+$secondary-color: #f6b601;
+$tertiary-color: #eae7d8;
+$scale: 0.9;
 
 @mixin logo {
         font-family: 'Montserrat Subrayada', sans-serif;
         color: $secondary-color;
-        transform: scale(1.2);
-        transition: all 1000ms;
+        transform: scale($scale);
+        transition: all 500ms;
 }
 
-$padding: (avatar: (15px 100px), link: (14px 28px), toggle: (10px 40px), breakpoint-link: (14px 100%));
-$fonts: (logo2: 16px, nav-right: 22px);
+$padding: (avatar: (15px 135px 15px 100px), link: (14px 28px), toggle: (10px 100px 10px 40px), breakpoint-link: (14px 100%));
+$fonts: (nav-right: 22px);
 
 * {
         box-sizing: border-box;
@@ -22,6 +24,15 @@ $fonts: (logo2: 16px, nav-right: 22px);
 
 body {
         font-family: 'Roboto', sans-serif;
+}
+
+body::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 100%;
+        background-image: url(images/cr.svg);
 }
 
 a {
@@ -37,21 +48,15 @@ a {
 	display: flex;
         align-items: center;
         padding: map-get($padding, avatar);
-        &__avatar {
-                border-radius: 50%;
-                padding-right: 20px;
-                padding-left: 20px;
-        }
         &__link-lg {
                 flex: 2;
                 display: flex;
-                justify-content: center;
-                margin: auto 20px;
+                align-items: center;
         }
         &__logo {
                 @include logo;
                 &:hover {
-                        transform: scale(1.8);
+                        transform: scale($scale - 0.03);
                 }
         }
         &__nav-right {
@@ -75,29 +80,30 @@ a {
                 border-radius: 50%;
                 transform: scale(1.22);
         }
-        &__logo {
-                @include logo;
-        }
 }
 
 #toggle {
         display: none;
 }
 
+.logo {
+        display: flex;
+        align-items: center;
+}
+
 .toggle-area {
         background-color: $primary-color;
-        border-bottom: 2px solid $tertiary-color;
         padding: map-get($padding, toggle);
         display: none;
-        justify-content: flex-end;
+        justify-content: space-between;
         align-items: center;
         &__link-tg {
-                margin: 0 auto;
         }
         &__logo {
                 @include logo;
+                font-size: 70%;
                 &:hover {
-                        transform: scale(1.2);
+                        transform: scale($scale - 0.03);
                 }
         }
 }
@@ -111,7 +117,7 @@ a {
         align-items: center;
         flex-direction: column;
         &__line {
-                background-color: black;
+                background-color: $tertiary-color;
                 height: 4px;
                 width: 70%;
                 margin: 2px 0;
@@ -119,25 +125,34 @@ a {
 }
 
 .title-container{
+        background-color: $primary-color;
+        color: $tertiary-color;
         max-width: 100%;
         height: 45em;
         display: flex;
-        flex-direction: column;
+        flex-flow: column nowrap;
         justify-content: space-around;
         align-items: center;
         padding: 40px 20px 30px;
         text-align: center;
         &__title {
-                max-width: 40%;
+                max-width: 65%;
                 display: flex;
-                flex-direction: column;
-                // align-items: center;
+                flex-flow: column wrap;
                 padding: 40px 10px;
+                font-family: 'Baloo 2', cursive;
+                font-size: 1.85em;
+        }
+        &__subtitle {
+                font-size: 0.9em;
         }
 }
 
+footer {
+        background-color: #f6b601;
+}
 .footer {
-        margin: 2em 15em 1.5em 15em;
+        padding: 2em 15em 2em 15em;
         display: flex;
         flex-flow: column wrap;
         align-items: center;
@@ -158,7 +173,7 @@ a {
 .two > img {
         float: left;
         margin-right: 7px;
-        border: black solid 4px;
+        border: #141824 solid 4px;
 }
 
 .bio-info {
@@ -177,7 +192,7 @@ li {
 }
 
 .icons-footer {
-        color: black;
+        color: #141824;
         font-size: 30px;
         padding-right: 7px;
 }
@@ -197,11 +212,11 @@ li {
         }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 902px) {
         .nav-bar {
                 flex-direction: column;
                 display: none;
-                &__avatar, &__link-lg {
+                &__link-lg {
                         display: none;
                 }
         }
@@ -224,13 +239,8 @@ li {
         	padding: map-get($padding, breakpoint-link);
         }
 
-        .title-container {
-                transform: scale(0.7);
-                height: 22.5em;
-        }
-
         .footer {
-                margin: 2em 0 0 0;
+                padding: 2em 0;
         }
 
         .links {
@@ -256,4 +266,33 @@ li {
        }
 
 
+}
+
+@media screen and (max-width: 826px) {
+        .title-container__title {
+                font-size: 140%;
+        }
+}
+
+@media screen and (max-width: 665px) {
+        .title-container {
+                &__subtitle {
+                        font-size: 75%;
+                }
+        }
+}
+
+@media screen and (max-width: 532px) {
+        .title-container {
+                font-size: 78%;
+                &__subtitle {
+                        font-size: 88%;
+                }
+        }
+}
+
+@media screen and (max-width: 420px) {
+        .title-container {
+                font-size: 48%;
+        }
 }
