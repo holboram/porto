@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat+Subrayada|Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Baloo+2|Roboto:500&display=swap");
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-flow: column wrap;
+  max-width: 30%;
+  padding: 40px 20px 30px;
+  text-align: center;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,10 +22,6 @@ body {
 
 a {
   text-decoration: none;
-}
-
-.small {
-  display: none;
 }
 
 .nav-bar {
@@ -43,8 +49,7 @@ a {
   display: flex;
   justify-content: space-between;
 }
-
-.link {
+.nav-bar__link {
   color: #eae7d8;
   font-weight: bold;
   font-size: 22px;
@@ -52,7 +57,7 @@ a {
   transform: scale(1);
   transition: transform 800ms, border-radius 500ms 100ms, color 700ms 100ms;
 }
-.link:hover:not(.nav-bar__link-lg) {
+.nav-bar__link:hover:not(.nav-bar__link-lg) {
   text-align: center;
   background-color: #f6b601;
   color: #141824;
@@ -69,6 +74,9 @@ a {
   justify-content: space-around;
   align-items: center;
 }
+.toggle-area__icon-header {
+  display: none;
+}
 .toggle-area__logo {
   font-family: "Montserrat Subrayada", sans-serif;
   color: #f6b601;
@@ -79,28 +87,21 @@ a {
 .toggle-area__logo:hover {
   transform: scale(0.87);
 }
-
-.label {
+.toggle-area__label {
   height: 45px;
   width: 50px;
   cursor: pointer;
   display: flex;
   align-items: center;
 }
-
-.responsive-menu {
+.toggle-area__burger {
   color: #eae7d8;
   font-size: 43px;
-}
-
-.icons-header {
-  display: none;
 }
 
 .title-container {
   background-color: #141824;
   color: #eae7d8;
-  height: 45em;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
@@ -120,67 +121,58 @@ a {
   font-size: 0.9em;
 }
 
-footer {
-  background-color: #f6b601;
-}
-
 .footer {
+  background-color: #f6b601;
   padding: 2em 15em 2em 15em;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
 }
-
-.links {
+.footer__links {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
   margin-bottom: 4em;
 }
-
-.two {
+.footer__two {
   max-width: 50%;
 }
-
-.two > img {
+.footer__image {
   float: left;
   margin-right: 7px;
   border: #141824 solid 4px;
 }
-
-.bio-info {
+.footer__bio-info {
   text-align: justify;
   margin-bottom: 15px;
 }
-
-.social {
+.footer__social {
   align-self: flex-start;
   list-style: none;
   margin-left: 55px;
 }
-
-li {
+.footer__item {
   display: flex;
 }
-
-.icons-footer {
+.footer__icon-footer {
   color: #141824;
   font-size: 30px;
   padding-right: 7px;
 }
+.footer__small {
+  display: none;
+}
 
 @media screen and (max-width: 1408px) {
-  .social p {
+  .footer__description {
     display: none;
   }
-
-  .small {
-    display: flex;
-  }
-
-  .icons-footer {
+  .footer__icon-footer {
     padding-left: 7px;
+  }
+  .footer__small {
+    display: flex;
   }
 }
 @media screen and (max-width: 902px) {
@@ -190,49 +182,43 @@ li {
   .nav-bar__link-lg {
     display: none;
   }
+  .nav-bar__nav-right {
+    flex-direction: column;
+  }
+  .nav-bar__link {
+    align-self: center;
+  }
+  .nav-bar__link:hover {
+    width: 123%;
+  }
 
   #toggle:checked + .nav-bar {
     display: flex;
-  }
-
-  .nav-bar__nav-right {
-    flex-direction: column;
   }
 
   .toggle-area {
     display: flex;
   }
 
-  .link {
-    align-self: center;
-  }
-  .link:hover {
-    width: 123%;
-  }
-
   .footer {
     padding: 2em 0;
   }
-
-  .links {
+  .footer__links {
     flex-flow: column wrap;
     justify-content: space-around;
     align-content: center;
   }
-
-  .two {
+  .footer__two {
     max-width: 70%;
     margin-bottom: 2em;
   }
-
-  .social {
+  .footer__social {
     margin: 0 auto;
     width: 100%;
     display: flex;
     justify-content: center;
   }
-
-  .small {
+  .footer__small {
     display: none;
   }
 
@@ -270,26 +256,29 @@ li {
     font-size: 110%;
   }
 
+  .toggle-area {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 4em;
+  }
   .toggle-area__link-tg {
     display: none;
   }
-
-  .label {
+  .toggle-area__label {
     display: none;
   }
-
-  .nav-bar__nav-right {
-    display: none;
+  .toggle-area__icon-header {
+    display: flex;
+    color: white;
+    font-size: 45px;
   }
 
   .nav-bar {
     display: none;
   }
-
-  .icons-header {
-    display: inline;
-    color: white;
-    font-size: 45px;
+  .nav-bar__nav-right {
+    display: none;
   }
 }
 @media screen and (max-width: 420px) {
