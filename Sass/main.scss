@@ -6,6 +6,30 @@ $secondary-color: #f6b601;
 $tertiary-color: #eae7d8;
 $scale: 0.9;
 
+$padding: (
+        avatar: (15px 100px 15px 100px),
+        link: (14px 28px),
+        title-container: (40px 20px 30px),
+        title: (40px 10px),
+        footer: (2em 15em),
+        icon-footer: 7px
+        );
+$fonts: (
+        nav-right: 22px,
+        burger: 43px,
+        title: 1.85em,
+        subtitle: 0.9em,
+        icon-footer: 30px
+        );
+$breakpoints: (
+        laptop-L: 1408px,
+        laptop: 902px,
+        laptop-S: 826px,
+        tablet: 665px,
+        tablet-S: 532px,
+        mobile: 420px,
+        );
+
 @mixin logo {
         font-family: 'Montserrat Subrayada', sans-serif;
         color: $secondary-color;
@@ -13,10 +37,41 @@ $scale: 0.9;
         transition: all 500ms;
 }
 
-$padding: (avatar: (15px 100px 15px 100px), link: (14px 28px), toggle: (10px 100px 10px 40px), breakpoint-link: (14px 100%));
-$fonts: (nav-right: 22px);
+@mixin laptop-large {
+        @media screen and (max-width: map-get($breakpoints, laptop-L)){
+                @content;
+        }
+}
 
+@mixin laptop {
+        @media screen and (max-width: map-get($breakpoints, laptop)){
+                @content;
+        }
+}
 
+@mixin laptop-S {
+        @media screen and (max-width: map-get($breakpoints, laptop-S)){
+                @content;
+        }
+}
+
+@mixin tablet {
+        @media screen and (max-width: map-get($breakpoints, tablet)){
+                @content;
+        }
+}
+
+@mixin tablet-S {
+        @media screen and (max-width: map-get($breakpoints, tablet-S)){
+                @content;
+        }
+}
+
+@mixin mobile {
+        @media screen and (max-width: map-get($breakpoints, mobile)){
+                @content;
+        }
+}
 
 .content {
         display: flex;
@@ -77,10 +132,36 @@ a {
                         transform: scale(1.22);
                 }
         }
+        @include laptop {
+                display: none;
+                &__link-lg {
+                        display: none;
+                }
+                &__nav-right {
+                        flex-direction: column;
+                }
+                &__link {
+                        align-self: center;
+                        &:hover {
+                                width: 123%;
+                        }
+                }
+        }
+        @include tablet-S {
+                display: none;
+                &__nav-right {
+                        display: none;
+                }
+        }
 }
 
 #toggle {
         display: none;
+        @include laptop {
+                &:checked + .nav-bar {
+                        display: flex;
+                }
+        }
 }
 
 .toggle-area {
@@ -107,36 +188,90 @@ a {
         }
         &__burger {
                 color: $tertiary-color;
-                font-size: 43px;
+                font-size: map-get($fonts, burger);
+        }
+        @include laptop {
+                display: flex;
+        }
+        @include tablet-S {
+                position: fixed;
+                bottom: 0px;
+                width: 100%;
+                height: 4em;
+                &__link-tg {
+                        display: none;
+                }
+                &__label {
+                        display: none;
+                }
+                &__icon-header {
+                        display: flex;
+                        color: $tertiary-color;
+                        font-size: 45px;
+                }
         }
 }
 
 .title-container{
         background-color: $primary-color;
         color: $tertiary-color;
-        // height: 45em;
         display: flex;
         flex-flow: column nowrap;
         justify-content: space-around;
         align-items: center;
-        padding: 40px 20px 30px;
+        padding: map-get($padding, title-container);
         text-align: center;
         &__title {
                 max-width: 65%;
                 display: flex;
                 flex-flow: column wrap;
-                padding: 40px 10px;
+                padding: map-get($padding, title);
                 font-family: 'Baloo 2', cursive;
-                font-size: 1.85em;
+                font-size: map-get($fonts, title);
         }
         &__subtitle {
-                font-size: 0.9em;
+                font-size: map-get($fonts, subtitle);
+        }
+        @include laptop {
+                height: 30em;
+                &__title {
+                        font-size: 110%;
+                }
+                &__subtitle {
+                        font-size: 100%;
+                }
+        }
+        @include laptop-S {
+                &__title {
+                        font-size: 115%;
+                }
+        }
+        @include tablet {
+                height: 20em;
+                &__title {
+                        font-size: 100%;
+                }
+                &__subtitle {
+                        font-size: 90%;
+                }
+        }
+        @include tablet-S {
+                font-size: 78%;
+                &__subtitle {
+                        font-size: 110%;
+                }
+        }
+        @include mobile {
+                font-size: 60%;
+                &__subtitle {
+                        font-size: 135%;
+                }
         }
 }
 
 .footer {
         background-color: $secondary-color;
-        padding: 2em 15em 2em 15em;
+        padding: map-get($padding, footer);
         display: flex;
         flex-flow: column wrap;
         align-items: center;
@@ -169,16 +304,13 @@ a {
         }
         &__icon-footer {
                 color: $primary-color;
-                font-size: 30px;
-                padding-right: 7px;
+                font-size: map-get($fonts, icon-footer);
+                padding-right: map-get($padding, icon-footer);
         }
         &__small {
                 display: none;
         }
-}
-
-@media screen and (max-width: 1408px) {
-        .footer {
+        @include laptop-large {
                 &__description {
                         display: none;
                 }
@@ -189,34 +321,7 @@ a {
                         display: flex;
                 }
         }
-}
-
-@media screen and (max-width: 902px) {
-        .nav-bar {
-                display: none;
-                &__link-lg {
-                        display: none;
-                }
-                &__nav-right {
-                        flex-direction: column;
-                }
-                &__link {
-                        align-self: center;
-                        &:hover {
-                                width: 123%;
-                        }
-                }
-        }
-
-        #toggle:checked + .nav-bar {
-                display: flex;
-        }
-
-        .toggle-area {
-                display: flex;
-        }
-
-        .footer {
+        @include laptop {
                 padding: 2em 0;
                 &__links {
                         flex-flow: column wrap;
@@ -235,79 +340,6 @@ a {
                 }
                 &__small {
                         display: none;
-                }
-        }
-
-        .title-container {
-                height: 30em;
-                &__title {
-                        font-size: 110%;
-                }
-                &__subtitle {
-                        font-size: 100%;
-                }
-        }
-}
-
-@media screen and (max-width: 826px) {
-        .title-container {
-                &__title {
-                        font-size: 115%;
-                }
-        }
-}
-
-@media screen and (max-width: 665px) {
-        .title-container {
-                height: 20em;
-                &__title {
-                        font-size: 100%;
-                }
-                &__subtitle {
-                        font-size: 90%;
-                }
-        }
-}
-
-@media screen and (max-width: 532px) {
-        .title-container {
-                font-size: 78%;
-                &__subtitle {
-                        font-size: 110%;
-                }
-        }
-
-        .toggle-area {
-                position: fixed;
-                bottom: 0px;
-                width: 100%;
-                height: 4em;
-                &__link-tg {
-                        display: none;
-                }
-                &__label {
-                        display: none;
-                }
-                &__icon-header {
-                        display: flex;
-                        color: white;
-                        font-size: 45px;
-                }
-        }
-
-        .nav-bar {
-                display: none;
-                &__nav-right {
-                        display: none;
-                }
-        }
-}
-
-@media screen and (max-width: 420px) {
-        .title-container {
-                font-size: 60%;
-                &__subtitle {
-                        font-size: 135%;
                 }
         }
 }
