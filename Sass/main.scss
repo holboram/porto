@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada|Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Baloo+2|Roboto:500&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat+Subrayada|Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Baloo+2|Roboto:500&display=swap");
 
 $primary-color: #141824;
 $secondary-color: #f6b601;
@@ -30,8 +30,21 @@ $breakpoints: (
         mobile: 420px,
         );
 
+@function change-text-color($color) {
+        @if (lightness($color) > 50) {
+                @return #ffffff; // Darker background, return light color
+        } @else {
+                @return red; // Lighter backgorund, return dark color
+        }
+}
+
+// .background-light {
+//         background:  $secondary-color;
+//         color: change-text-color($secondary-color);
+// }
+
 @mixin logo {
-        font-family: 'Montserrat Subrayada', sans-serif;
+        font-family: "Montserrat Subrayada", sans-serif;
         color: $secondary-color;
         transform: scale($scale);
         transition: all 500ms;
@@ -78,9 +91,14 @@ $breakpoints: (
         justify-content: space-between;
         align-content: center;
         flex-flow: column wrap;
-        max-width: 30%;
         padding: 40px 20px 30px;
         text-align: center;
+        height: 500px;
+        border: solid 1px #fff;
+}
+
+html {
+background: #fff;
 }
 
 * {
@@ -89,8 +107,14 @@ $breakpoints: (
         padding: 0;
 }
 
-body {
-        font-family: 'Roboto', sans-serif;
+.body {
+        font-family: "Roboto", sans-serif;
+        background-color: $primary-color;
+        background: url('/images/background_art.svg') no-repeat;
+        background-size: cover;
+
+
+
 }
 
 a {
@@ -98,10 +122,10 @@ a {
 }
 
 .nav-bar {
-        background-color: $primary-color;
 	display: flex;
         align-items: center;
         padding: map-get($padding, avatar);
+        mix-blend-mode: difference;
         &__link-lg {
                 flex: 2;
                 display: flex;
@@ -134,6 +158,7 @@ a {
         }
         @include laptop {
                 display: none;
+                overflow: hidden;
                 &__link-lg {
                         display: none;
                 }
@@ -143,7 +168,7 @@ a {
                 &__link {
                         align-self: center;
                         &:hover {
-                                width: 123%;
+                                width: 135%;
                         }
                 }
         }
@@ -165,7 +190,6 @@ a {
 }
 
 .toggle-area {
-        background-color: $primary-color;
         display: none;
         justify-content: space-around;
         align-items: center;
@@ -187,6 +211,7 @@ a {
                 align-items: center;
         }
         &__burger {
+                mix-blend-mode: difference;
                 color: $tertiary-color;
                 font-size: map-get($fonts, burger);
         }
@@ -194,6 +219,7 @@ a {
                 display: flex;
         }
         @include tablet-S {
+                background: $primary-color;
                 position: fixed;
                 bottom: 0px;
                 width: 100%;
@@ -213,7 +239,7 @@ a {
 }
 
 .title-container{
-        background-color: $primary-color;
+        mix-blend-mode: difference;
         color: $tertiary-color;
         display: flex;
         flex-flow: column nowrap;
@@ -226,7 +252,7 @@ a {
                 display: flex;
                 flex-flow: column wrap;
                 padding: map-get($padding, title);
-                font-family: 'Baloo 2', cursive;
+                font-family: "Baloo 2", cursive;
                 font-size: map-get($fonts, title);
         }
         &__subtitle {
@@ -271,6 +297,7 @@ a {
 
 .footer {
         background-color: $secondary-color;
+        background-size: cover;
         padding: map-get($padding, footer);
         display: flex;
         flex-flow: column wrap;
