@@ -30,13 +30,13 @@ $breakpoints: (
         mobile: 420px,
         );
 
-@function change-text-color($color) {
-        @if (lightness($color) > 50) {
-                @return #ffffff; // Darker background, return light color
-        } @else {
-                @return red; // Lighter backgorund, return dark color
-        }
-}
+// @function change-text-color($color) {
+//         @if (lightness($color) > 50) {
+//                 @return #ffffff; // Darker background, return light color
+//         } @else {
+//                 @return red; // Lighter backgorund, return dark color
+//         }
+// }
 
 // .background-light {
 //         background:  $secondary-color;
@@ -88,13 +88,22 @@ $breakpoints: (
 
 .content {
         display: flex;
+        flex-flow: row wrap;
         justify-content: space-between;
-        align-content: center;
-        flex-flow: column wrap;
-        padding: 40px 20px 30px;
+        align-items: space-around;
+        // align-content: center;
+        padding: map-get($padding, footer);
         text-align: center;
-        height: 500px;
         border: solid 1px #fff;
+        &__article {
+                border: solid 1px #fff;
+                width: 50%;
+                height: 450px;
+        }
+        &__sub-article {
+                border: solid 1px #fff;
+                height: 45%;
+        }
 }
 
 // html {
@@ -110,7 +119,7 @@ $breakpoints: (
 .body {
         font-family: "Roboto", sans-serif;
         background-color: $primary-color;
-        background: url('/images/background_art.svg') no-repeat;
+        background: url('../images/background_art.svg') no-repeat;
         background-size: cover;
 
 

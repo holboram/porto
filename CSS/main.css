@@ -2,13 +2,21 @@
 @import url("https://fonts.googleapis.com/css?family=Baloo+2|Roboto:500&display=swap");
 .content {
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-between;
-  align-content: center;
-  flex-flow: column wrap;
-  padding: 40px 20px 30px;
+  align-items: space-around;
+  padding: 2em 15em;
   text-align: center;
-  height: 500px;
   border: solid 1px #fff;
+}
+.content__article {
+  border: solid 1px #fff;
+  width: 50%;
+  height: 450px;
+}
+.content__sub-article {
+  border: solid 1px #fff;
+  height: 45%;
 }
 
 * {
@@ -20,7 +28,7 @@
 .body {
   font-family: "Roboto", sans-serif;
   background-color: #141824;
-  background: url("/images/background_art.svg") no-repeat;
+  background: url("../images/background_art.svg") no-repeat;
   background-size: cover;
 }
 
