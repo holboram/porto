@@ -30,13 +30,13 @@ $breakpoints: (
         mobile: 420px,
         );
 
-@function change-text-color($color) {
-        @if (lightness($color) > 50) {
-                @return #ffffff; // Darker background, return light color
-        } @else {
-                @return red; // Lighter backgorund, return dark color
-        }
-}
+// @function change-text-color($color) {
+//         @if (lightness($color) > 50) {
+//                 @return #ffffff; // Darker background, return light color
+//         } @else {
+//                 @return red; // Lighter backgorund, return dark color
+//         }
+// }
 
 // .background-light {
 //         background:  $secondary-color;
@@ -110,7 +110,7 @@ html {
 .body {
         font-family: "Roboto", sans-serif;
         background-color: $primary-color;
-        background: url('./background_art.svg') no-repeat;
+        background: url('/images/background_art.svg') no-repeat;
         background-size: cover;
 
 
