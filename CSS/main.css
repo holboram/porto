@@ -3,20 +3,18 @@
 .content {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: space-around;
-  padding: 2em 15em;
-  text-align: center;
+  justify-content: center;
+  align-items: space-evenly;
   border: solid 1px #fff;
 }
 .content__article {
+  margin: 0.4em;
+  dislay: flex;
+  flex-basis: 34%;
+  background: blue;
   border: solid 1px #fff;
-  width: 50%;
-  height: 450px;
-}
-.content__sub-article {
-  border: solid 1px #fff;
-  height: 45%;
+  color: red;
+  min-height: 30em;
 }
 
 html {

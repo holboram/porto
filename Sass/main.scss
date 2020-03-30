@@ -89,20 +89,18 @@ $breakpoints: (
 .content {
         display: flex;
         flex-flow: row wrap;
-        justify-content: space-between;
-        align-items: space-around;
-        // align-content: center;
-        padding: map-get($padding, footer);
-        text-align: center;
+        justify-content: center;
+        align-items: space-evenly;
+        // padding: map-get($padding, footer);
         border: solid 1px #fff;
         &__article {
+                margin: 0.4em;
+                dislay: flex;
+                flex-basis: 34%;
+                background: blue;
                 border: solid 1px #fff;
-                width: 50%;
-                height: 450px;
-        }
-        &__sub-article {
-                border: solid 1px #fff;
-                height: 45%;
+                color: red;
+                min-height: 30em;
         }
 }
 
@@ -121,9 +119,6 @@ html {
         background-color: $primary-color;
         background: url('../images/background_art.svg') no-repeat;
         background-size: cover;
-
-
-
 }
 
 a {
