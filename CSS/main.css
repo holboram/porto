@@ -1,22 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat+Subrayada|Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Baloo+2|Roboto:500&display=swap");
-.content {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: space-evenly;
-  border: solid 1px #fff;
-}
-.content__article {
-  margin: 0.4em;
-  dislay: flex;
-  flex-basis: 34%;
-  background: blue;
-  border: solid 1px #fff;
-  color: red;
-  min-height: 30em;
-}
-
 html {
   background: #fff;
 }
@@ -50,7 +33,6 @@ a {
   align-items: center;
 }
 .nav-bar__logo {
-  font-family: "Montserrat Subrayada", sans-serif;
   color: #f6b601;
   transform: scale(0.9);
   transition: all 500ms;
@@ -76,6 +58,13 @@ a {
   background-color: #f6b601;
   color: #141824;
   transform: scale(1.22);
+}
+.nav-bar__link--highlight-underline {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  -webkit-text-decoration-color: #f6b601;
+          text-decoration-color: #f6b601;
+  text-underline-offset: 50%;
 }
 @media screen and (max-width: 902px) {
   .nav-bar {
@@ -122,7 +111,6 @@ a {
   display: none;
 }
 .toggle-area__logo {
-  font-family: "Montserrat Subrayada", sans-serif;
   color: #f6b601;
   transform: scale(0.9);
   transition: all 500ms;
@@ -154,7 +142,7 @@ a {
     position: fixed;
     bottom: 0px;
     width: 100%;
-    height: 4em;
+    height: 3em;
   }
   .toggle-area__link-tg {
     display: none;
@@ -165,7 +153,7 @@ a {
   .toggle-area__icon-header {
     display: flex;
     color: #eae7d8;
-    font-size: 45px;
+    font-size: 40px;
   }
 }
 
@@ -231,6 +219,60 @@ a {
   }
   .title-container__subtitle {
     font-size: 135%;
+  }
+}
+
+.content {
+  margin-bottom: 1.6em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: space-evenly;
+  text-align: center;
+}
+.content__article {
+  margin: 0.4em;
+  flex-basis: 34%;
+  background: blue;
+  color: red;
+  min-height: 30em;
+}
+.content__article--reshape {
+  border: none;
+  background: none;
+  margin: 0;
+  display: flex;
+  flex-flow: column wrap;
+}
+@media screen and (max-width: 532px) {
+  .content__article {
+    min-height: 20em;
+  }
+}
+.content__articleA {
+  margin: 0.4em;
+  min-height: 15em;
+  background: blue;
+}
+@media screen and (max-width: 665px) {
+  .content__articleA {
+    min-height: 30em;
+  }
+}
+@media screen and (max-width: 532px) {
+  .content__articleA {
+    min-height: 20em;
+  }
+}
+@media screen and (max-width: 665px) {
+  .content {
+    flex-direction: column;
+    margin: 0 5.5em 1.6em;
+  }
+}
+@media screen and (max-width: 532px) {
+  .content {
+    margin: 0 4.5em 1.6em;
   }
 }
 
