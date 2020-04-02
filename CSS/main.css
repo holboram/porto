@@ -240,9 +240,9 @@ a {
 .content__article--reshape {
   border: none;
   background: none;
-  margin: 0;
   display: flex;
   flex-flow: column wrap;
+  justify-content: space-between;
 }
 @media screen and (max-width: 532px) {
   .content__article {
@@ -250,8 +250,8 @@ a {
   }
 }
 .content__articleA {
-  margin: 0.4em;
-  min-height: 15em;
+  margin: 0;
+  min-height: 48.6%;
   background: blue;
 }
 @media screen and (max-width: 665px) {
