@@ -61,6 +61,8 @@ $breakpoints: (
         text-decoration-thickness: 3px;
         text-decoration-color: $secondary-color;
         text-underline-offset: 50%;
+        // border-bottom: solid 3px $secondary-color;
+        // border-bottom-length: 15em;
 }
 
 @mixin laptop-large {
@@ -148,12 +150,15 @@ a {
         	padding: map-get($padding, link);
                 transform: scale(1);
                 transition: transform 800ms, border-radius 500ms 100ms, color 700ms 100ms;
-                &:hover:not(.nav-bar__link-lg) {
-                        @include highlight;
-                }
                 &--highlight-underline {
                         @include highlight-underline;
                 }
+                &:hover:not(.nav-bar__link-lg) {
+                        @include highlight;
+                }
+                // &--highlight-underline {
+                //         @include highlight-underline;
+                // }
         }
         @include laptop {
                 display: none;
@@ -244,6 +249,7 @@ a {
         flex-flow: column nowrap;
         justify-content: space-around;
         align-items: center;
+        margin-bottom: 10em;
         padding: map-get($padding, title-container);
         text-align: center;
         &__title {
@@ -267,6 +273,7 @@ a {
                 }
         }
         @include laptop-S {
+                margin-bottom: 6em;
                 &__title {
                         font-size: 115%;
                 }
@@ -295,28 +302,38 @@ a {
 }
 
 .content {
-        margin-bottom: 1.6em;
+        margin-bottom: 1.6em ;
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
         align-items: space-evenly;
-        text-align: center;
+        // text-align: center;
+        &__title {
+                border: solid 1px white;
+                color: white;
+                // width: 68.5%;
+                width: 100%;
+        }
         &__article {
                 margin: 0.4em;
                 flex-basis: 34%;
                 background: blue;
                 color: red;
                 min-height: 30em;
+                @include tablet-S {
+                        min-height: 20em;
+                }
                 &--reshape {
-                        border: none;
                         background: none;
-                        // margin: 0.4em;
                         display: flex;
                         flex-flow: column wrap;
                         justify-content: space-between;
-                }
-                @include tablet-S {
-                        min-height: 20em;
+                        @include tablet {
+                                min-height: 61em;
+                        }
+                        @include tablet-S {
+                                min-height: 41em;
+                        }
                 }
         }
         &__articleA {
@@ -335,7 +352,7 @@ a {
                 margin: 0 5.5em 1.6em;
         }
         @include tablet-S {
-                margin: 0 4.5em 1.6em;
+                margin: 0 3em 1.6em;
         }
 
 }
