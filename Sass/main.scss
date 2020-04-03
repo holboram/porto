@@ -42,6 +42,15 @@ $breakpoints: (
 //         background:  $secondary-color;
 //         color: change-text-color($secondary-color);
 // }
+@mixin highlight-project {
+        box-sizing: border-box;
+        border: 20px solid $secondary-color;
+        background-color: $primary-color;
+
+        &::after {
+                display: flex;
+                content: "see project";}
+}
 
 @mixin logo {
         color: $secondary-color;
@@ -59,10 +68,9 @@ $breakpoints: (
 @mixin highlight-underline {
         text-decoration: underline;
         text-decoration-thickness: 3px;
-        text-decoration-color: $secondary-color;
+        -webkit-text-decoration-color: $secondary-color;
+                text-decoration-color: $secondary-color;
         text-underline-offset: 50%;
-        // border-bottom: solid 3px $secondary-color;
-        // border-bottom-length: 15em;
 }
 
 @mixin laptop-large {
@@ -266,37 +274,37 @@ a {
         @include laptop {
                 height: 30em;
                 &__title {
-                        font-size: 110%;
+                        font-size: 118%;
                 }
                 &__subtitle {
-                        font-size: 100%;
+                        font-size: 122%;
                 }
         }
         @include laptop-S {
                 margin-bottom: 6em;
                 &__title {
-                        font-size: 115%;
+                        font-size: 116%;
                 }
         }
         @include tablet {
                 height: 20em;
                 &__title {
-                        font-size: 100%;
+                        font-size: 110%;
                 }
                 &__subtitle {
-                        font-size: 90%;
+                        font-size: 120%;
                 }
         }
         @include tablet-S {
-                font-size: 78%;
+                font-size: 89%;
                 &__subtitle {
-                        font-size: 110%;
+                        font-size: 120%;
                 }
         }
         @include mobile {
-                font-size: 60%;
+                font-size: 86%;
                 &__subtitle {
-                        font-size: 135%;
+                        font-size: 120%;
                 }
         }
 }
@@ -307,12 +315,16 @@ a {
         flex-flow: row wrap;
         justify-content: center;
         align-items: space-evenly;
-        // text-align: center;
         &__title {
-                border: solid 1px white;
-                color: white;
-                // width: 68.5%;
-                width: 100%;
+                mix-blend-mode: difference;
+                font-size: 2em;
+                color: $tertiary-color;
+                width: 69%;
+                margin: 0.4em;
+                @include tablet {
+                        width: 95%;
+                        text-align: center;
+                }
         }
         &__article {
                 margin: 0.4em;
@@ -320,6 +332,9 @@ a {
                 background: blue;
                 color: red;
                 min-height: 30em;
+                &:hover:not(.content__article--reshape) {
+                        @include highlight-project;
+                }
                 @include tablet-S {
                         min-height: 20em;
                 }
@@ -340,6 +355,12 @@ a {
                 margin: 0;
                 min-height: 48.6%;
                 background: blue;
+                &:hover {
+                        .content__title {
+                                display: none;
+                        }
+                        @include highlight-project;
+                }
                 @include tablet {
                         min-height: 30em;
                 }
@@ -349,6 +370,7 @@ a {
         }
         @include tablet {
                 flex-direction: column;
+                align-content: center;
                 margin: 0 5.5em 1.6em;
         }
         @include tablet-S {

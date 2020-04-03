@@ -78,7 +78,7 @@ a {
   text-decoration: underline;
   text-decoration-thickness: 3px;
   -webkit-text-decoration-color: #f6b601;
-          text-decoration-color: #f6b601;
+  text-decoration-color: #f6b601;
   text-underline-offset: 50%;
 }
 
@@ -239,10 +239,10 @@ a {
     height: 30em;
   }
   .title-container__title {
-    font-size: 110%;
+    font-size: 118%;
   }
   .title-container__subtitle {
-    font-size: 100%;
+    font-size: 122%;
   }
 }
 
@@ -251,7 +251,7 @@ a {
     margin-bottom: 6em;
   }
   .title-container__title {
-    font-size: 115%;
+    font-size: 116%;
   }
 }
 
@@ -260,28 +260,28 @@ a {
     height: 20em;
   }
   .title-container__title {
-    font-size: 100%;
+    font-size: 110%;
   }
   .title-container__subtitle {
-    font-size: 90%;
+    font-size: 120%;
   }
 }
 
 @media screen and (max-width: 532px) {
   .title-container {
-    font-size: 78%;
+    font-size: 89%;
   }
   .title-container__subtitle {
-    font-size: 110%;
+    font-size: 120%;
   }
 }
 
 @media screen and (max-width: 420px) {
   .title-container {
-    font-size: 60%;
+    font-size: 86%;
   }
   .title-container__subtitle {
-    font-size: 135%;
+    font-size: 120%;
   }
 }
 
@@ -299,9 +299,18 @@ a {
 }
 
 .content__title {
-  border: solid 1px white;
-  color: white;
-  width: 100%;
+  mix-blend-mode: difference;
+  font-size: 2em;
+  color: #eae7d8;
+  width: 69%;
+  margin: 0.4em;
+}
+
+@media screen and (max-width: 665px) {
+  .content__title {
+    width: 95%;
+    text-align: center;
+  }
 }
 
 .content__article {
@@ -310,6 +319,18 @@ a {
   background: blue;
   color: red;
   min-height: 30em;
+}
+
+.content__article:hover:not(.content__article--reshape) {
+  box-sizing: border-box;
+  border: 20px solid #f6b601;
+  background-color: #141824;
+}
+
+.content__article:hover:not(.content__article--reshape)::after {
+  display: -webkit-box;
+  display: flex;
+  content: "see project";
 }
 
 @media screen and (max-width: 532px) {
@@ -347,6 +368,22 @@ a {
   background: blue;
 }
 
+.content__articleA:hover {
+  box-sizing: border-box;
+  border: 20px solid #f6b601;
+  background-color: #141824;
+}
+
+.content__articleA:hover .content__title {
+  display: none;
+}
+
+.content__articleA:hover::after {
+  display: -webkit-box;
+  display: flex;
+  content: "see project";
+}
+
 @media screen and (max-width: 665px) {
   .content__articleA {
     min-height: 30em;
@@ -364,6 +401,7 @@ a {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
             flex-direction: column;
+    align-content: center;
     margin: 0 5.5em 1.6em;
   }
 }
