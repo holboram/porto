@@ -463,6 +463,10 @@ a {
   font-size: 1.5em;
 }
 
+.content__subtitle-project--color {
+  mix-blend-mode: exclusion;
+}
+
 .content__project-link {
   display: none;
 }
@@ -473,6 +477,14 @@ a {
 
 .content__dogsTrust {
   background-color: #ffd535;
+}
+
+.content__poolspot {
+  background-color: #F8F9FA;
+}
+
+.content__fan-courier {
+  background-color: #E3EAF2;
 }
 
 .content__project-logo {
