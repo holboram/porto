@@ -11,6 +11,11 @@ html {
   padding: 0;
 }
 
+header, main, footer {
+  max-width: 115em;
+  margin: 0 auto;
+}
+
 .body {
   font-family: "Roboto", sans-serif;
   background-color: #141824;
@@ -326,6 +331,12 @@ a {
   min-height: 30em;
 }
 
+@media screen and (max-width: 532px) {
+  .content__article {
+    min-height: 20em;
+  }
+}
+
 .content__article--resize {
   margin: 0;
   min-height: 48.6%;
@@ -385,6 +396,52 @@ a {
   }
 }
 
+.content__article--reshape {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-flow: column wrap;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 665px) {
+  .content__article--reshape {
+    min-height: 61em;
+  }
+}
+
+@media screen and (max-width: 532px) {
+  .content__article--reshape {
+    min-height: 41em;
+  }
+}
+
+.content__article--subeast {
+  background-color: #9E9E9E;
+}
+
+.content__article--dogsTrust {
+  background-color: #ffd535;
+}
+
+.content__article--poolspot {
+  background-color: #F8F9FA;
+}
+
+.content__article--fan-courier {
+  background-color: #E3EAF2;
+}
+
+.content__article--electroalfa {
+  background-color: #0B1135;
+}
+
+.content__article--clean {
+  background-color: #D7D7D7;
+}
+
 .content__article:hover:not(.content__article--reshape) {
   -webkit-transition-duration: .3s;
           transition-duration: .3s;
@@ -427,35 +484,6 @@ a {
   transition: all 250ms ease-in-out;
 }
 
-@media screen and (max-width: 532px) {
-  .content__article {
-    min-height: 20em;
-  }
-}
-
-.content__article--reshape {
-  background: none;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-flow: column wrap;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
-}
-
-@media screen and (max-width: 665px) {
-  .content__article--reshape {
-    min-height: 61em;
-  }
-}
-
-@media screen and (max-width: 532px) {
-  .content__article--reshape {
-    min-height: 41em;
-  }
-}
-
 .content__subtitle-project {
   min-height: 3em;
   padding-left: 2em;
@@ -471,33 +499,11 @@ a {
   display: none;
 }
 
-.content__subeast {
-  background-color: #9E9E9E;
-}
-
-.content__dogsTrust {
-  background-color: #ffd535;
-}
-
-.content__poolspot {
-  background-color: #F8F9FA;
-}
-
-.content__fan-courier {
-  background-color: #E3EAF2;
-}
-
 .content__project-logo {
   -ms-grid-row-align: center;
       align-self: center;
   margin: auto 0;
-  width: 60%;
-}
-
-@media screen and (max-width: 902px) {
-  .content__project-logo {
-    width: 80%;
-  }
+  width: 80%;
 }
 
 @media screen and (max-width: 665px) {

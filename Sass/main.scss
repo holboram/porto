@@ -7,13 +7,24 @@ $secondary-color: #f6b601;
 $tertiary-color: #eae7d8;
 $scale: 0.9;
 
+$margin: (
+        centru: (0 auto),
+        centre: (auto 0),
+        title-container: 10em,
+        title-containerLaptopS: 6em,
+        contentMain: 1.6em,
+        content-title-article: 0.4em
+
+);
 $padding: (
         avatar: (15px 100px 15px 100px),
         link: (14px 28px),
         title-container: (40px 20px 30px),
         title: (40px 10px),
         footer: (2em 15em),
-        icon-footer: 7px
+        icon-footer: 7px,
+        subtitle-project: 2em,
+        footer-laptop: 2em 0
         );
 $fonts: (
         nav-right: 22px,
@@ -91,7 +102,7 @@ $breakpoints: (
         text-decoration: underline;
         text-decoration-thickness: 3px;
         -webkit-text-decoration-color: $secondary-color;
-                text-decoration-color: $secondary-color;
+        text-decoration-color: $secondary-color;
         text-underline-offset: 50%;
 }
 
@@ -141,6 +152,11 @@ html {
         padding: 0;
 }
 
+header, main, footer {
+        max-width: 115em;
+        margin: map-get($margin, centru);
+}
+
 .body {
         font-family: "Roboto", sans-serif;
         background-color: $primary-color;
@@ -186,9 +202,6 @@ a {
                 &:hover:not(.nav-bar__link-lg) {
                         @include highlight;
                 }
-                // &--highlight-underline {
-                //         @include highlight-underline;
-                // }
         }
         @include laptop {
                 display: none;
@@ -279,7 +292,7 @@ a {
         flex-flow: column nowrap;
         justify-content: space-around;
         align-items: center;
-        margin-bottom: 10em;
+        margin-bottom: map-get($margin, title-container);
         padding: map-get($padding, title-container);
         text-align: center;
         &__title {
@@ -303,7 +316,7 @@ a {
                 }
         }
         @include laptop-S {
-                margin-bottom: 6em;
+                margin-bottom: map-get($margin, title-containerLaptopS);
                 &__title {
                         font-size: 116%;
                 }
@@ -332,30 +345,32 @@ a {
 }
 
 .content {
-        margin-bottom: 1.6em ;
+        margin-bottom: map-get($margin, contentMain);
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
-        // align-items: space-evenly;
         &__title {
                 mix-blend-mode: difference;
                 font-size: 2.4em;
                 color: $tertiary-color;
                 width: 69%;
-                margin: 0.4em;
+                margin: map-get($margin, content-title-article);
                 @include tablet {
                         width: 95%;
                         text-align: center;
                 }
         }
         &__article {
-                margin: 0.4em;
+                margin: map-get($margin, content-title-article);
                 flex-basis: 34%;
                 display: flex;
                 flex-flow: column wrap;
                 justify-content: flex-end;
                 color: $secondary-color;
                 min-height: 30em;
+                @include tablet-S {
+                        min-height: 20em;
+                }
                 &--resize {
                         margin: 0;
                         min-height: 48.6%;
@@ -369,14 +384,7 @@ a {
                                 min-height: 20em;
                         }
                 }
-                &:hover:not(.content__article--reshape) {
-                        @include highlight-project;
-                }
-                @include tablet-S {
-                        min-height: 20em;
-                }
                 &--reshape {
-                        background: none;
                         display: flex;
                         flex-flow: column wrap;
                         justify-content: space-between;
@@ -387,11 +395,31 @@ a {
                                 min-height: 41em;
                         }
                 }
+                &--subeast {
+                        background-color: #9E9E9E;
+                }
+                &--dogsTrust {
+                        background-color: #ffd535;
+                }
+                &--poolspot {
+                        background-color: #F8F9FA;
+                }
+                &--fan-courier {
+                        background-color: #E3EAF2;
+                }
+                &--electroalfa {
+                        background-color: #0B1135;
+                }
+                &--clean {
+                        background-color: #D7D7D7;
+                }
+                &:hover:not(.content__article--reshape) {
+                        @include highlight-project;
+                }
         }
         &__subtitle-project {
-                // border-top: solid 1px white;
                 min-height: 3em;
-                padding-left: 2em;
+                padding-left: map-get($padding, subtitle-project);
                 font-family: 'Cutive Mono', monospace;
                 font-size: 1.5em;
                 &--color {
@@ -401,26 +429,10 @@ a {
         &__project-link {
                 display: none;
         }
-
-        &__subeast {
-                background-color: #9E9E9E;
-        }
-        &__dogsTrust {
-                background-color: #ffd535;
-        }
-        &__poolspot {
-                background-color: #F8F9FA;
-        }
-        &__fan-courier {
-                background-color: #E3EAF2;
-        }
         &__project-logo {
                 align-self: center;
-                margin: auto 0;
-                width: 60%;
-                @include laptop {
-                        width: 80%;
-                }
+                margin: map-get($margin, centre);
+                width: 80%;
         }
         @include tablet {
                 flex-direction: column;
@@ -430,8 +442,6 @@ a {
         @include tablet-S {
                 margin: 0 3em 1.6em;
         }
-
-
 }
 
 .footer {
@@ -481,14 +491,14 @@ a {
                         display: none;
                 }
                 &__icon-footer {
-                        padding-left: 7px;
+                        padding-left: map-get($padding, icon-footer);
                 }
                 &__small {
                         display: flex;
                 }
         }
         @include laptop {
-                padding: 2em 0;
+                padding: map-get($padding, footer-laptop);
                 &__links {
                         flex-flow: column wrap;
                         justify-content: space-around;
