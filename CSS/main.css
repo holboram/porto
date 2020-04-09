@@ -11,7 +11,9 @@ html {
   padding: 0;
 }
 
-header, main, footer {
+footer,
+header,
+main {
   max-width: 115em;
   margin: 0 auto;
 }
@@ -190,7 +192,7 @@ a {
   .toggle-area {
     background: #141824;
     position: fixed;
-    bottom: 0px;
+    bottom: 0;
     width: 100%;
     height: 3em;
   }
@@ -343,8 +345,8 @@ a {
 }
 
 .content__article--resize:hover {
-  -webkit-transition-duration: .3s;
-          transition-duration: .3s;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
   box-sizing: border-box;
   border: 20px solid #f6b601;
   background-color: #141824;
@@ -373,8 +375,8 @@ a {
   font-size: 2em;
 }
 
-.content__article--resize:hover .content__project-link:hover .arrow,
-.content__article--resize:hover .content__project-link:focus .arrow {
+.content__article--resize:hover .content__project-link:focus .arrow,
+.content__article--resize:hover .content__project-link:hover .arrow {
   stroke-width: 6;
   stroke: #f6b601;
 }
@@ -443,8 +445,8 @@ a {
 }
 
 .content__article:hover:not(.content__article--reshape) {
-  -webkit-transition-duration: .3s;
-          transition-duration: .3s;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
   box-sizing: border-box;
   border: 20px solid #f6b601;
   background-color: #141824;
@@ -473,8 +475,8 @@ a {
   font-size: 2em;
 }
 
-.content__article:hover:not(.content__article--reshape) .content__project-link:hover .arrow,
-.content__article:hover:not(.content__article--reshape) .content__project-link:focus .arrow {
+.content__article:hover:not(.content__article--reshape) .content__project-link:focus .arrow,
+.content__article:hover:not(.content__article--reshape) .content__project-link:hover .arrow {
   stroke-width: 6;
   stroke: #f6b601;
 }
