@@ -308,78 +308,11 @@ a {
   }
 }
 
-.title-container {
-  mix-blend-mode: difference;
-  color: $tertiary-color;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-around;
-  align-items: center;
-  margin-bottom: map-get($margin, title-container);
-  padding: map-get($padding, title-container);
-  text-align: center;
-
-  &__title {
-    max-width: 65%;
-    display: flex;
-    flex-flow: column wrap;
-    padding: map-get($padding, title);
-    font-family: "Baloo 2", cursive;
-    font-size: map-get($fonts, title);
-  }
-
-  &__subtitle {
-    font-size: map-get($fonts, subtitle);
-  }
-  @include laptop {
-    height: 30em;
-
-    &__title {
-      font-size: map-get($fonts, title-container-titleLaptop);
-    }
-
-    &__subtitle {
-      font-size: map-get($fonts, title-container-subtitleLaptop);
-    }
-  }
-  @include laptop-S {
-    margin-bottom: map-get($margin, title-containerLaptopS);
-
-    &__title {
-      font-size: map-get($fonts, title-container-titleLaptopS);
-    }
-  }
-  @include tablet {
-    height: 20em;
-
-    &__title {
-      font-size: map-get($fonts, title-container-titleTablet);
-    }
-
-    &__subtitle {
-      font-size: map-get($fonts, title-container-subtitleTablet);
-    }
-  }
-  @include tablet-S {
-    font-size: map-get($fonts, title-containerTabletS);
-
-    &__subtitle {
-      // font-size: map-get($fonts, title-container-subtitleTabletS);
-    }
-  }
-  @include mobile {
-    font-size: map-get($fonts, title-containerMobile);
-
-    &__subtitle {
-      // font-size: map-get($fonts, title-container-subtitleMobile);
-    }
-  }
-}
-
 .content {
   margin-bottom: map-get($margin, contentMain);
+  color: $tertiary-color;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   justify-content: center;
 
   &__title {
@@ -392,103 +325,6 @@ a {
       width: 95%;
       text-align: center;
     }
-  }
-
-  &__article {
-    margin: map-get($margin, content-title-article);
-    flex-basis: 34%;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: flex-end;
-    color: $secondary-color;
-    min-height: 30em;
-    @include tablet-S {
-      min-height: 20em;
-    }
-
-    &--resize {
-      margin: map-get($margin, article-resize);
-      min-height: 48.6%;
-
-      &:hover {
-        @include highlight-project;
-      }
-      @include tablet {
-        min-height: 30em;
-      }
-      @include tablet-S {
-        min-height: 20em;
-      }
-    }
-
-    &--reshape {
-      display: flex;
-      flex-flow: column wrap;
-      justify-content: space-between;
-      @include tablet {
-        min-height: 61em;
-      }
-      @include tablet-S {
-        min-height: 41em;
-      }
-    }
-
-    &--subeast {
-      background-color: #9E9E9E;
-    }
-
-    &--dogsTrust {
-      background-color: #ffd535;
-    }
-
-    &--poolspot {
-      background-color: #F8F9FA;
-    }
-
-    &--fan-courier {
-      background-color: #E3EAF2;
-    }
-
-    &--electroalfa {
-      background-color: #0B1135;
-    }
-
-    &--clean {
-      background-color: #D7D7D7;
-    }
-
-    &:hover:not(.content__article--reshape) {
-      @include highlight-project;
-    }
-  }
-
-  &__subtitle-project {
-    min-height: 3em;
-    padding-left: map-get($padding, subtitle-project);
-    font-family: 'Cutive Mono', monospace;
-    font-size: get-map($fonts, content-subtitle-project);
-
-    &--color {
-      mix-blend-mode: exclusion;
-    }
-  }
-
-  &__project-link {
-    display: none;
-  }
-
-  &__project-logo {
-    align-self: center;
-    margin: map-get($margin, centre);
-    width: 80%;
-  }
-  @include tablet {
-    flex-direction: column;
-    align-content: center;
-    margin: map-get($margin, content-tablet);
-  }
-  @include tablet-S {
-    margin: map-get($margin, content-tabletS);
   }
 }
 
