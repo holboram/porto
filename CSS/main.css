@@ -208,6 +208,9 @@ a {
     color: #eae7d8;
     font-size: 40px;
   }
+  .toggle-area__icon-header--active {
+    color: #f6b601;
+  }
 }
 
 .title-container {

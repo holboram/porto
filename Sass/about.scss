@@ -309,6 +309,10 @@ a {
       display: flex;
       color: $tertiary-color;
       font-size: map-get($fonts, toggle-area-icon-headerTableS);
+
+      &--active {
+        color: $secondary-color;
+      }
     }
   }
 }
