@@ -369,10 +369,6 @@ a {
   }
   @include mobile {
     font-size: map-get($fonts, title-containerMobile);
-
-    &__subtitle {
-      // font-size: map-get($fonts, title-container-subtitleMobile);
-    }
   }
 }
 
