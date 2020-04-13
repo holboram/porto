@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat+Subrayada|Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Baloo+2|Roboto:500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap");
-.content__fa-swimmer, .content__fa-table-tennis, .content__fa-hiking, .content__fa-briefcase, .content__fa-graduation-cap {
+.content__icons-inline, .content__fa-briefcase, .content__fa-graduation-cap {
   font-size: 2.4em;
   color: #f6b601;
 }
@@ -241,6 +241,11 @@ a {
 @media screen and (max-width: 826px) {
   .content__title {
     width: 95%;
+  }
+}
+
+@media screen and (max-width: 665px) {
+  .content__title {
     text-align: center;
   }
 }
@@ -249,6 +254,17 @@ a {
   position: relative;
   font-size: 1.6em;
   bottom: 0.13em;
+}
+
+@media screen and (max-width: 665px) {
+  .content__title--typography {
+    text-align: left;
+  }
+}
+
+.content__title--centered {
+  text-align: center;
+  font-size: 1.6em;
 }
 
 .content__wrapper {
@@ -274,7 +290,7 @@ a {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-          flex-flow: column wrap;
+          flex-flow: column nowrap;
   -webkit-box-align: center;
           align-items: center;
   background-color: #141824;
@@ -291,14 +307,20 @@ a {
 }
 
 .content__image {
+  align-self: flex-start;
   float: left;
   margin-right: 7px;
   border: #141824 solid 4px;
 }
 
 .content__bio-info {
+  align-self: flex-start;
   text-align: justify;
   margin-bottom: 15px;
+}
+
+.content__container {
+  margin: 0.4em;
 }
 
 .content__icons-inline {
@@ -308,8 +330,9 @@ a {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
           flex-flow: row wrap;
-  justify-content: space-around;
-  font-size: 1.6em;
+  -webkit-box-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 100%;
 }
 
 .content__right {

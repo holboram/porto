@@ -332,6 +332,8 @@ a {
     margin: map-get($margin, content-title-article);
     @include laptop-S {
       width: 95%;
+    }
+    @include tablet {
       text-align: center;
     }
 
@@ -339,6 +341,14 @@ a {
       position: relative;
       font-size: 1.6em;
       bottom: 0.13em;
+      @include tablet {
+        text-align: left;
+      }
+    }
+
+    &--centered {
+      text-align: center;
+      font-size: 1.6em;
     }
   }
 
@@ -355,8 +365,7 @@ a {
 
   &__left {
     display: flex;
-    flex-flow: column wrap;
-    // justify-content: space-between;
+    flex-flow: column nowrap;
     align-items: center;
     background-color: $primary-color;
     max-width: 29%;
@@ -372,34 +381,29 @@ a {
   }
 
   &__image {
+    align-self: flex-start;
     float: left;
     margin-right: map-get($margin, footer-image);
     border: $primary-color solid 4px;
   }
 
   &__bio-info {
+    align-self: flex-start;
     text-align: justify;
     margin-bottom: map-get($margin, footer-bio-info);
+  }
+
+  &__container {
+    margin: map-get($margin, content-title-article);
   }
 
   &__icons-inline {
     list-style: none;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
-    font-size: 1.6em;
-  }
-
-  &__fa-swimmer {
+    justify-content: space-evenly;
     @extend %design-icon;
-  }
-
-  &__fa-table-tennis {
-    @extend %design-icon;
-  }
-
-  &__fa-hiking {
-    @extend %design-icon;
+    width: 100%;
   }
 
   &__right {
