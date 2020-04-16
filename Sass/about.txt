@@ -55,12 +55,18 @@ $fonts: (
 );
 $breakpoints: (
   laptop-L: 1408px,
-  laptop: 902px,
+  // wrapper: 1200px,
+  laptop laptop: 902px,
   laptop-S: 826px,
   tablet: 665px,
   tablet-S: 532px,
   mobile: 420px
 );
+
+%design-icon {
+  font-size: 2.4em;
+  color: $secondary-color;
+}
 @mixin highlight-project {
   transition-duration: 0.3s;
   box-sizing: border-box;
@@ -143,6 +149,11 @@ $breakpoints: (
     @content;
   }
 }
+// @mixin wrapper {
+//   @media screen and (max-width: map-get($breakpoints, wrapper)) {
+//     @content;
+//   }
+// }
 
 html {
   background: #fff;
@@ -171,6 +182,149 @@ main {
 a {
   text-decoration: none;
 }
+
+// .nav-bar {
+//   display: flex;
+//   align-items: center;
+//   padding: map-get($padding, avatar);
+//   mix-blend-mode: difference;
+//
+//   &__link-lg {
+//     flex: 2;
+//     display: flex;
+//     align-items: center;
+//   }
+//
+//   &__logo {
+//     @include logo;
+//
+//     &:hover {
+//       transform: scale($scale - 0.03);
+//     }
+//   }
+//
+//   &__nav-right {
+//     flex: 1;
+//     display: flex;
+//     justify-content: space-between;
+//   }
+//
+//   &__link {
+//     color: $tertiary-color;
+//     font-weight: bold;
+//     font-size: map-get($fonts, nav-right);
+//     padding: map-get($padding, link);
+//     transform: scale(1);
+//     transition: transform 800ms, border-radius 500ms 100ms, color 700ms 100ms;
+//
+//     &--highlight-underline {
+//       @include highlight-underline;
+//     }
+//
+//     &:hover:not(.nav-bar__link-lg) {
+//       @include highlight;
+//     }
+//   }
+//   @include laptop {
+//     display: none;
+//     overflow: hidden;
+//
+//     &__link-lg {
+//       display: none;
+//     }
+//
+//     &__nav-right {
+//       flex-direction: column;
+//     }
+//
+//     &__link {
+//       align-self: center;
+//
+//       &:hover {
+//         width: 135%;
+//       }
+//     }
+//   }
+//   @include tablet-S {
+//     display: none;
+//
+//     &__nav-right {
+//       display: none;
+//     }
+//   }
+// }
+//
+// #toggle {
+//   display: none;
+//   @include laptop {
+//     &:checked + .nav-bar {
+//       display: flex;
+//     }
+//   }
+// }
+//
+// .toggle-area {
+//   display: none;
+//   justify-content: space-around;
+//   align-items: center;
+//   padding: map-get($padding, headerTablet);
+//
+//   &__icon-header {
+//     display: none;
+//   }
+//
+//   &__logo {
+//     @include logo;
+//     font-size: map-get($fonts, toggle-area-logo);
+//
+//     &:hover {
+//       transform: scale($scale - 0.03);
+//     }
+//   }
+//
+//   &__label {
+//     height: 45px;
+//     width: 50px;
+//     cursor: pointer;
+//     display: flex;
+//     align-items: center;
+//   }
+//
+//   &__burger {
+//     mix-blend-mode: difference;
+//     color: $tertiary-color;
+//     font-size: map-get($fonts, burger);
+//   }
+//   @include laptop {
+//     display: flex;
+//   }
+//   @include tablet-S {
+//     background: $primary-color;
+//     position: fixed;
+//     bottom: 0;
+//     width: 100%;
+//     height: 2.7em;
+//
+//     &__link-tg {
+//       display: none;
+//     }
+//
+//     &__label {
+//       display: none;
+//     }
+//
+//     &__icon-header {
+//       display: flex;
+//       justify-content: space-evenly;
+//       color: $tertiary-color;
+//       font-size: map-get($fonts, toggle-area-icon-headerTableS);
+//
+//       &--active {
+//         color: $secondary-color;
+//       }
+//     }
+//   }
+// }
 
 .nav-bar {
   display: flex;
@@ -264,7 +418,6 @@ a {
 
   &__logo {
     @include logo;
-    mix-blend-mode: difference;
     font-size: map-get($fonts, toggle-area-logo);
 
     &:hover {
@@ -316,72 +469,9 @@ a {
   }
 }
 
-.title-container {
-  mix-blend-mode: difference;
-  color: $tertiary-color;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-around;
-  align-items: center;
-  margin-bottom: map-get($margin, title-container);
-  padding: map-get($padding, title-container);
-  text-align: center;
-
-  &__title {
-    max-width: 65%;
-    display: flex;
-    flex-flow: column wrap;
-    padding: map-get($padding, title);
-    font-family: "Baloo 2", cursive;
-    font-size: map-get($fonts, title);
-  }
-
-  &__subtitle {
-    font-size: map-get($fonts, subtitle);
-  }
-  @include laptop {
-    height: 30em;
-
-    &__title {
-      font-size: map-get($fonts, title-container-titleLaptop);
-    }
-
-    &__subtitle {
-      font-size: map-get($fonts, title-container-subtitleLaptop);
-    }
-  }
-  @include laptop-S {
-    margin-bottom: map-get($margin, title-containerLaptopS);
-
-    &__title {
-      font-size: map-get($fonts, title-container-titleLaptopS);
-    }
-  }
-  @include tablet {
-    height: 20em;
-
-    &__title {
-      font-size: map-get($fonts, title-container-titleTablet);
-    }
-
-    &__subtitle {
-      font-size: map-get($fonts, title-container-subtitleTablet);
-    }
-  }
-  @include tablet-S {
-    font-size: map-get($fonts, title-containerTabletS);
-
-    &__subtitle {
-      // font-size: map-get($fonts, title-container-subtitleTabletS);
-    }
-  }
-  @include mobile {
-    font-size: map-get($fonts, title-containerMobile);
-  }
-}
-
 .content {
   margin-bottom: map-get($margin, contentMain);
+  color: $tertiary-color;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -392,109 +482,222 @@ a {
     color: $tertiary-color;
     width: 69%;
     margin: map-get($margin, content-title-article);
-    @include tablet {
+    @include laptop-S {
       width: 95%;
+    }
+    @include tablet {
       text-align: center;
     }
+
+    &--typography {
+      position: relative;
+      font-size: 1.6em;
+      bottom: 0.13em;
+      @include tablet {
+        text-align: left;
+      }
+    }
+
+    &--centered {
+      text-align: center;
+      font-size: 1.6em;
+    }
+  }
+
+  &__wrapper {
+    margin: map-get($margin, content-title-article);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    max-width: 69%;
+    @include laptop-S {
+      max-width: 95%;
+    }
+    // @include wrapper {
+    //   flex-flow: column wrap;
+    // }
+  }
+
+  // &__left {
+  //   display: flex;
+  //   flex-flow: column nowrap;
+  //   align-items: center;
+  //   background-color: $primary-color;
+  //   max-width: 29%;
+  //   @include wrapper {
+  //     max-width: 100%;
+  //   }
+  // }
+  //
+  // &__image {
+  //   align-self: flex-start;
+  //   float: left;
+  //   margin-right: map-get($margin, footer-image);
+  //   border: $primary-color solid 4px;
+  // }
+  //
+  // &__bio-info {
+  //   align-self: flex-start;
+  //   text-align: justify;
+  //   margin-bottom: map-get($margin, footer-bio-info);
+  // }
+  //
+  // &__container {
+  //   margin: map-get($margin, content-title-article);
+  // }
+  //
+  // &__icons-inline {
+  //   list-style: none;
+  //   display: flex;
+  //   flex-flow: row wrap;
+  //   justify-content: space-evenly;
+  //   @extend %design-icon;
+  //   width: 100%;
+  // }
+
+  &__right {
+    max-width: 69%;
+    background-color: $primary-color;
+    display: flex;
+    flex-flow: column wrap;
+    border-radius: 3%;
+    // @include wrapper {
+    //   max-width: 100%;
+    // }
+  }
+
+  &__line {
+    position: relative;
+    top: 1%;
+    border: none;
+    height: 0.16em;
+    margin-bottom: 1.5em;
+    background: $secondary-color;
+  }
+
+  &__fa-circle {
+    bottom: -0.1em;
+    font-size: 1em;
+    color: $secondary-color;
+  }
+
+  &__fa-briefcase {
+    @extend %design-icon;
+  }
+
+  &__fa-graduation-cap {
+    @extend %design-icon;
+  }
+
+  &__icon-title {
+    display: flex;
   }
 
   &__article {
-    margin: map-get($margin, content-title-article);
-    flex-basis: 34%;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 1.25em 0;
+  }
+
+  &__location {
+    flex: 1;
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 0.3em;
+  }
+
+  &__school-diploma {
+    flex: 2;
     display: flex;
     flex-flow: column wrap;
-    justify-content: flex-end;
-    color: $secondary-color;
-    min-height: 30em;
-    @include tablet-S {
-      min-height: 20em;
+    font-size: 1.2em;
+
+    &--spacing {
+      margin-bottom: 0.7em;
+      margin-top: 0.7em;
     }
 
-    &--resize {
-      margin: map-get($margin, article-resize);
-      min-height: 48.6%;
-
-      &:hover {
-        @include highlight-project;
-      }
-      @include tablet {
-        min-height: 30em;
-      }
-      @include tablet-S {
-        min-height: 20em;
-      }
+    &--highlight {
+      font-weight: bold;
+      font-size: 1.4em;
     }
-
-    &--reshape {
-      display: flex;
-      flex-flow: column wrap;
-      justify-content: space-between;
-      @include tablet {
-        min-height: 61em;
-      }
-      @include tablet-S {
-        min-height: 41em;
-      }
-    }
-
-    &--subeast {
-      background-color: #9E9E9E;
-    }
-
-    &--dogsTrust {
-      background-color: #ffd535;
-    }
-
-    &--poolspot {
-      background-color: #F8F9FA;
-    }
-
-    &--fan-courier {
-      background-color: #E3EAF2;
-    }
-
-    &--electroalfa {
-      background-color: #0B1135;
-    }
-
-    &--clean {
-      background-color: #D7D7D7;
-    }
-
-    &:hover:not(.content__article--reshape) {
-      @include highlight-project;
-    }
-  }
-
-  &__subtitle-project {
-    min-height: 3em;
-    padding-left: map-get($padding, subtitle-project);
-    font-family: 'Cutive Mono', monospace;
-    font-size: map-get($fonts, content-subtitle-project);
-
-    &--color {
-      mix-blend-mode: exclusion;
-    }
-  }
-
-  &__project-link {
-    display: none;
-  }
-
-  &__project-logo {
-    align-self: center;
-    margin: map-get($margin, centre);
-    width: 80%;
-  }
-  @include tablet {
-    flex-direction: column;
-    align-content: center;
-    margin: map-get($margin, content-tablet);
-  }
-  @include tablet-S {
-    margin: map-get($margin, content-tabletS);
   }
 }
+
+// .footer {
+//   background-color: $secondary-color;
+//   background-size: cover;
+//   padding: map-get($padding, footer);
+//   display: flex;
+//   flex-flow: column wrap;
+//   align-items: center;
+//
+//   &__links {
+//     display: flex;
+//     flex-flow: row wrap;
+//     justify-content: space-around;
+//     align-items: center;
+//     margin-bottom: map-get($margin, footer-links);
+//   }
+//
+//   &__social {
+//     align-self: flex-start;
+//     list-style: none;
+//     margin-left: map-get($margin, footer-social);
+//   }
+//
+//   &__item {
+//     display: flex;
+//   }
+//
+//   &__icon-footer {
+//     color: $primary-color;
+//     font-size: map-get($fonts, icon-footer);
+//     padding-right: map-get($padding, icon-footer);
+//   }
+//
+//   &__small {
+//     display: none;
+//   }
+//   @include laptop-large {
+//     &__description {
+//       display: none;
+//     }
+//
+//     &__icon-footer {
+//       padding-left: map-get($padding, icon-footer);
+//     }
+//
+//     &__small {
+//       display: flex;
+//     }
+//   }
+//   @include laptop {
+//     padding: map-get($padding, footer-laptop);
+//
+//     &__links {
+//       flex-flow: column wrap;
+//       justify-content: space-around;
+//       align-content: center;
+//     }
+//
+//     &__two {
+//       max-width: 70%;
+//       margin-bottom: map-get($margin, footer-twoLaptop);
+//     }
+//
+//     &__social {
+//       margin: map-get($margin, centru);
+//       width: 100%;
+//       display: flex;
+//       justify-content: center;
+//     }
+//
+//     &__small {
+//       display: none;
+//     }
+//   }
+// }
 
 .footer {
   background-color: $secondary-color;

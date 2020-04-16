@@ -4,6 +4,8 @@
 $primary-color: #141824;
 $secondary-color: #f6b601;
 $tertiary-color: #eae7d8;
+$quaternary: #AB810D;
+$quinary: #5F4D18;
 $scale: 0.9;
 $margin: (
   centru: (0 auto),
@@ -12,6 +14,7 @@ $margin: (
   title-containerLaptopS: 6em,
   contentMain: 1.6em,
   content-title-article: 0.4em,
+  content-about-article: 0.8em,
   article-resize: 0,
   content-tablet: (0 5.5em 1.6em),
   content-tabletS: (0 3em 1.6em),
@@ -23,6 +26,7 @@ $margin: (
 );
 $padding: (
   avatar: (15px 100px 15px 100px),
+  headerTablet: (15px 0),
   link: (14px 28px),
   title-container: (40px 20px 30px),
   title: (40px 10px),
@@ -39,7 +43,7 @@ $fonts: (
   icon-footer: 30px,
   highlight-project: 2em,
   toggle-area-logo: 70%,
-  toggle-area-icon-headerTableS: 40px,
+  toggle-area-icon-headerTableS: 2.3em,
   title-container-titleLaptop: 118%,
   title-container-subtitleLaptop: 122%,
   title-container-titleLaptopS: 116%,
@@ -50,7 +54,10 @@ $fonts: (
   title-containerMobile: 86%,
   title-container-subtitleMobile: 120%,
   content-title: 2.4em,
-  content-subtitle-project: 1.5em
+  content-subtitle-project: 1.5em,
+  content-article-about: 1.3em,
+  content-diploma-highlight: 1.35em,
+  circle: 0.7em
 );
 $breakpoints: (
   laptop-L: 1408px,
@@ -62,42 +69,8 @@ $breakpoints: (
 );
 
 %design-icon {
-  font-size: 2.4em;
+  font-size: 1.4em;
   color: $secondary-color;
-}
-@mixin highlight-project {
-  transition-duration: 0.3s;
-  box-sizing: border-box;
-  border: 20px solid $secondary-color;
-  background-color: $primary-color;
-  color: $secondary-color;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .content__subtitle-project {
-    display: none;
-  }
-
-  .content__project-logo {
-    display: none;
-  }
-
-  .content__project-link {
-    display: flex;
-    align-items: center;
-    font-size: map-get($fonts, highlight-project);
-  }
-
-  .content__project-link:focus .arrow,
-  .content__project-link:hover .arrow {
-    stroke-width: 6;
-    stroke: $secondary-color;
-  }
-
-  .arrow {
-    transition: all 250ms ease-in-out;
-  }
 }
 @mixin logo {
   color: $secondary-color;
@@ -257,9 +230,11 @@ a {
 }
 
 .toggle-area {
+  z-index: 2;
   display: none;
   justify-content: space-around;
   align-items: center;
+  padding: map-get($padding, headerTablet);
 
   &__icon-header {
     display: none;
@@ -267,6 +242,7 @@ a {
 
   &__logo {
     @include logo;
+    mix-blend-mode: difference;
     font-size: map-get($fonts, toggle-area-logo);
 
     &:hover {
@@ -295,7 +271,7 @@ a {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 3em;
+    height: 2.7em;
 
     &__link-tg {
       display: none;
@@ -307,6 +283,7 @@ a {
 
     &__icon-header {
       display: flex;
+      // justify-content: space-evenly;
       color: $tertiary-color;
       font-size: map-get($fonts, toggle-area-icon-headerTableS);
 
@@ -319,157 +296,139 @@ a {
 
 .content {
   margin-bottom: map-get($margin, contentMain);
-  color: $tertiary-color;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   justify-content: center;
+  align-content: center;
 
   &__title {
     mix-blend-mode: difference;
+    align-self: center;
     font-size: map-get($fonts, content-title);
     color: $tertiary-color;
     width: 69%;
     margin: map-get($margin, content-title-article);
-    @include laptop-S {
-      width: 95%;
-    }
     @include tablet {
+      width: 95%;
       text-align: center;
     }
-
-    &--typography {
-      position: relative;
-      font-size: 1.6em;
-      bottom: 0.13em;
-      @include tablet {
-        text-align: left;
-      }
-    }
-
-    &--centered {
-      text-align: center;
-      font-size: 1.6em;
-    }
-  }
-
-  &__wrapper {
-    margin: map-get($margin, content-title-article);
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    max-width: 69%;
-    @include laptop-S {
-      max-width: 95%;
-    }
-  }
-
-  &__left {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    background-color: $primary-color;
-    max-width: 29%;
-  }
-
-  &__line {
-    position: relative;
-    top: 1%;
-    border: none;
-    height: 0.16em;
-    margin-bottom: 1.5em;
-    background: $secondary-color;
-  }
-
-  &__image {
-    align-self: flex-start;
-    float: left;
-    margin-right: map-get($margin, footer-image);
-    border: $primary-color solid 4px;
-  }
-
-  &__bio-info {
-    align-self: flex-start;
-    text-align: justify;
-    margin-bottom: map-get($margin, footer-bio-info);
-  }
-
-  &__container {
-    margin: map-get($margin, content-title-article);
-  }
-
-  &__icons-inline {
-    list-style: none;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    @extend %design-icon;
-    width: 100%;
-  }
-
-  &__right {
-    max-width: 69%;
-    background-color: $primary-color;
-    display: flex;
-    flex-flow: column wrap;
-  }
-
-  &__line {
-    position: relative;
-    top: 1%;
-    border: none;
-    height: 0.16em;
-    margin-bottom: 1.5em;
-    background: $secondary-color;
-  }
-
-  &__fa-circle {
-    position: relative;
-    bottom: -0.1em;
-    font-size: 1em;
-    color: $secondary-color;
-  }
-
-  &__fa-briefcase {
-    @extend %design-icon;
   }
 
   &__fa-graduation-cap {
     @extend %design-icon;
+    margin-left: -1.5em;
   }
 
-  &__icon-title {
-    display: flex;
+  &__fa-briefcase {
+    @extend %design-icon;
+    margin-left: -1.22em;
   }
 
-  &__article {
+  &__fa-circle {
+    font-size: map-get($fonts, circle);
+    position: relative;
+    bottom: -0.1em;
+    color: $secondary-color;
+  }
+
+  &__line {
+    mix-blend-mode: difference;
+    align-self: center;
+    width: 79%;
+    position: relative;
+    top: 1%;
+    border: none;
+    height: 0.16em;
+    background: $secondary-color;
+  }
+
+  &__article-about {
+    // mix-blend-mode: difference;
+    align-self: center;
     display: flex;
-    flex-flow: row wrap;
-    padding: 1.25em 0;
+    justify-content: space-between;
+    width: 60%;
+    color: $tertiary-color;
+    margin-top: map-get($margin, content-about-article);
+    font-size: map-get($fonts, content-article-about);
+    padding: map-get($padding, subtitle-project);
+    background: $primary-color;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-top: 100px solid $quaternary;
+      border-left: 310px solid transparent;
+      width: 0;
+
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-bottom: 100px solid $quinary;
+      border-right: 310px solid transparent;
+      width: 0;
+
+    }
   }
 
   &__location {
-    flex: 1;
     display: flex;
-    flex-flow: row wrap;
-    margin-top: 0.3em;
+    width: 40%;
+    margin-right: 1em;
   }
 
   &__school-diploma {
-    flex: 2;
     display: flex;
     flex-flow: column wrap;
-    font-size: 1.2em;
-
-    &--spacing {
-      margin-bottom: 0.7em;
-      margin-top: 0.7em;
-    }
+    width: 60%;
 
     &--highlight {
       font-weight: bold;
-      font-size: 1.4em;
+      font-size: map-get($fonts, content-diploma-highlight);
+    }
+
+    &--spacing {
+      margin: 0.7em 0;
+      font-style: italic;
     }
   }
+
+  // &__article {
+  //   margin: map-get($margin, content-title-article);
+  //   flex-basis: 34%;
+  //   display: flex;
+  //   flex-flow: column wrap;
+  //   justify-content: flex-end;
+  //   color: $secondary-color;
+  //   min-height: 30em;
+  //   @include tablet-S {
+  //     min-height: 20em;
+  //   }
+  // }
+
+  // &__subtitle-project {
+  //   min-height: 3em;
+  //   padding-left: map-get($padding, subtitle-project);
+  //   font-family: 'Cutive Mono', monospace;
+  //   font-size: get-map($fonts, content-subtitle-project);
+  //
+  // }
+
+  // @include tablet {
+  //   flex-direction: column;
+  //   align-content: center;
+  //   margin: map-get($margin, content-tablet);
+  // }
+  // @include tablet-S {
+  //   margin: map-get($margin, content-tabletS);
+  // }
 }
 
 .footer {
@@ -486,6 +445,21 @@ a {
     justify-content: space-around;
     align-items: center;
     margin-bottom: map-get($margin, footer-links);
+  }
+
+  &__two {
+    max-width: 50%;
+  }
+
+  &__image {
+    float: left;
+    margin-right: map-get($margin, footer-image);
+    border: $primary-color solid 4px;
+  }
+
+  &__bio-info {
+    text-align: justify;
+    margin-bottom: map-get($margin, footer-bio-info);
   }
 
   &__social {

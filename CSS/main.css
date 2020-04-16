@@ -145,6 +145,7 @@ a {
   justify-content: space-around;
   -webkit-box-align: center;
           align-items: center;
+  padding: 15px 0;
 }
 
 .toggle-area__icon-header {
@@ -157,6 +158,7 @@ a {
           transform: scale(0.9);
   -webkit-transition: all 500ms;
   transition: all 500ms;
+  mix-blend-mode: difference;
   font-size: 70%;
 }
 
@@ -194,7 +196,7 @@ a {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 3em;
+    height: 2.7em;
   }
   .toggle-area__link-tg {
     display: none;
@@ -206,7 +208,7 @@ a {
     display: -webkit-box;
     display: flex;
     color: #eae7d8;
-    font-size: 40px;
+    font-size: 2.3em;
   }
   .toggle-area__icon-header--active {
     color: #f6b601;
@@ -487,7 +489,7 @@ a {
   min-height: 3em;
   padding-left: 2em;
   font-family: 'Cutive Mono', monospace;
-  font-size: get-map((nav-right: 22px, burger: 43px, title: 1.85em, subtitle: 0.9em, icon-footer: 30px, highlight-project: 2em, toggle-area-logo: 70%, toggle-area-icon-headerTableS: 40px, title-container-titleLaptop: 118%, title-container-subtitleLaptop: 122%, title-container-titleLaptopS: 116%, title-container-titleTablet: 110%, title-container-subtitleTablet: 120%, title-containerTabletS: 89%, title-container-subtitleTabletS: 120%, title-containerMobile: 86%, title-container-subtitleMobile: 120%, content-title: 2.4em, content-subtitle-project: 1.5em), content-subtitle-project);
+  font-size: 1.5em;
 }
 
 .content__subtitle-project--color {
