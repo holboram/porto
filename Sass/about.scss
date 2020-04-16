@@ -6,7 +6,6 @@ $secondary-color: #f6b601;
 $tertiary-color: #eae7d8;
 $quaternary: #64876f;
 $quinary: #5F4D18;
-// 8d2774
 $scale: 0.9;
 $margin: (
   centru: (0 auto),
@@ -68,11 +67,6 @@ $breakpoints: (
   tablet-S: 532px,
   mobile: 420px
 );
-
-%design-icon {
-  font-size: 1.4em;
-  color: $secondary-color;
-}
 @mixin logo {
   color: $secondary-color;
   transform: scale($scale);
@@ -119,6 +113,14 @@ $breakpoints: (
 @mixin mobile {
   @media screen and (max-width: map-get($breakpoints, mobile)) {
     @content;
+  }
+}
+
+%design-icon {
+  font-size: 1.4em;
+  color: $secondary-color;
+  @include mobile {
+    display: none;
   }
 }
 
@@ -302,6 +304,13 @@ a {
   justify-content: center;
   align-content: center;
 
+  @include tablet {
+    font-size: 82%;
+  }
+  @include tablet-S {
+    font-size: 75%;
+  }
+
   &__title {
     mix-blend-mode: difference;
     align-self: center;
@@ -330,6 +339,9 @@ a {
     position: relative;
     bottom: -0.1em;
     color: $secondary-color;
+    @include tablet {
+      display: none;
+    }
   }
 
   &__line {
@@ -344,7 +356,6 @@ a {
   }
 
   &__article-about {
-    // mix-blend-mode: difference;
     align-self: center;
     display: flex;
     justify-content: space-between;
@@ -377,12 +388,105 @@ a {
       width: 0;
 
     }
+
+    @include tablet {
+      width: 80%;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-top: 50px solid $quaternary;
+        border-left: 310px solid transparent;
+        width: 0;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-bottom: 50px solid $quaternary;
+        border-right: 310px solid transparent;
+        width: 0;
+
+      }
+    }
+    @include tablet-S {
+      width: 80%;
+      flex-flow: column wrap;
+      align-content: center;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-top: 38px solid $quaternary;
+        border-left: 310px solid transparent;
+        width: 0;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-bottom: 38px solid $quaternary;
+        border-right: 310px solid transparent;
+        width: 0;
+
+      }
+    }
+    @include mobile {
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-top: 30px solid $quaternary;
+        border-left: 210px solid transparent;
+        width: 0;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-bottom: 30px solid $quaternary;
+        border-right: 210px solid transparent;
+        width: 0;
+
+      }
+    }
   }
 
   &__location {
     display: flex;
     width: 40%;
     margin-right: 1em;
+    @include tablet {
+      flex-flow: column wrap;
+      width: 100%;
+      margin-right: 0.2em;
+
+      & span {
+        padding-left: 10px;
+
+      }
+
+    }
+    @include tablet-S {
+      flex-flow: row nowrap;
+      margin-right: 0;
+
+      & br {
+        display: none;
+      }
+
+    }
   }
 
   &__school-diploma {
@@ -398,6 +502,13 @@ a {
     &--spacing {
       margin: 0.7em 0;
       font-style: italic;
+    }
+    @include tablet {
+      width: 85%;
+    }
+    @include tablet-S {
+      margin-top: 0.3em;
+      width: 100%;
     }
   }
 
@@ -461,6 +572,9 @@ a {
   &__bio-info {
     text-align: justify;
     margin-bottom: map-get($margin, footer-bio-info);
+    @include tablet-S {
+      font-size: map-get($fonts, title-containerMobile);
+    }
   }
 
   &__social {

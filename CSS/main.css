@@ -303,6 +303,18 @@ a {
           justify-content: center;
 }
 
+@media screen and (max-width: 665px) {
+  .content {
+    font-size: 82%;
+  }
+}
+
+@media screen and (max-width: 532px) {
+  .content {
+    font-size: 75%;
+  }
+}
+
 .content__title {
   mix-blend-mode: difference;
   font-size: 2.4em;
@@ -561,6 +573,12 @@ a {
 .footer__bio-info {
   text-align: justify;
   margin-bottom: 15px;
+}
+
+@media screen and (max-width: 532px) {
+  .footer__bio-info {
+    font-size: 86%;
+  }
 }
 
 .footer__social {

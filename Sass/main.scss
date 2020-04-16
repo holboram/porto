@@ -370,10 +370,6 @@ a {
   }
   @include tablet-S {
     font-size: map-get($fonts, title-containerTabletS);
-
-    &__subtitle {
-      // font-size: map-get($fonts, title-container-subtitleTabletS);
-    }
   }
   @include mobile {
     font-size: map-get($fonts, title-containerMobile);
@@ -385,6 +381,13 @@ a {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  @include tablet {
+    font-size: 82%;
+  }
+
+  @include tablet-S {
+    font-size: 75%;
+  }
 
   &__title {
     mix-blend-mode: difference;
@@ -396,6 +399,7 @@ a {
       width: 95%;
       text-align: center;
     }
+
   }
 
   &__article {
@@ -525,6 +529,9 @@ a {
   &__bio-info {
     text-align: justify;
     margin-bottom: map-get($margin, footer-bio-info);
+    @include tablet-S {
+      font-size: map-get($fonts, title-containerMobile);
+    }
   }
 
   &__social {
