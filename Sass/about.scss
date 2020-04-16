@@ -4,8 +4,9 @@
 $primary-color: #141824;
 $secondary-color: #f6b601;
 $tertiary-color: #eae7d8;
-$quaternary: #AB810D;
+$quaternary: #64876f;
 $quinary: #5F4D18;
+// 8d2774
 $scale: 0.9;
 $margin: (
   centru: (0 auto),
@@ -371,7 +372,7 @@ a {
       position: absolute;
       bottom: 0;
       left: 0;
-      border-bottom: 100px solid $quinary;
+      border-bottom: 100px solid $quaternary;
       border-right: 310px solid transparent;
       width: 0;
 

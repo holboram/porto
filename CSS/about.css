@@ -297,7 +297,7 @@ a {
   position: absolute;
   top: 0;
   right: 0;
-  border-top: 100px solid #AB810D;
+  border-top: 100px solid #64876f;
   border-left: 310px solid transparent;
   width: 0;
 }
@@ -307,7 +307,7 @@ a {
   position: absolute;
   bottom: 0;
   left: 0;
-  border-bottom: 100px solid #5F4D18;
+  border-bottom: 100px solid #64876f;
   border-right: 310px solid transparent;
   width: 0;
 }
