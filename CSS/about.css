@@ -239,6 +239,12 @@ a {
   align-content: center;
 }
 
+@media screen and (max-width: 826px) {
+  .content {
+    font-size: 90%;
+  }
+}
+
 @media screen and (max-width: 665px) {
   .content {
     font-size: 82%;
@@ -336,6 +342,54 @@ a {
   width: 0;
 }
 
+@media screen and (max-width: 902px) {
+  .content__article-about {
+    width: 85%;
+  }
+  .content__article-about:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top: 50px solid #64876f;
+    border-left: 320px solid transparent;
+    width: 0;
+  }
+  .content__article-about:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-bottom: 50px solid #64876f;
+    border-right: 320px solid transparent;
+    width: 0;
+  }
+}
+
+@media screen and (max-width: 826px) {
+  .content__article-about {
+    width: 80%;
+  }
+  .content__article-about:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top: 55px solid #64876f;
+    border-left: 320px solid transparent;
+    width: 0;
+  }
+  .content__article-about:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-bottom: 55px solid #64876f;
+    border-right: 320px solid transparent;
+    width: 0;
+  }
+}
+
 @media screen and (max-width: 665px) {
   .content__article-about {
     width: 80%;
@@ -416,6 +470,36 @@ a {
   margin-right: 1em;
 }
 
+.content__location span {
+  padding-left: 10px;
+}
+
+@media screen and (max-width: 902px) {
+  .content__location {
+    width: 50%;
+    margin-right: 0.2em;
+  }
+  .content__location span {
+    padding-left: 10px;
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 826px) {
+  .content__location {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-flow: row wrap;
+    width: 50%;
+    margin-right: 0.2em;
+  }
+  .content__location span {
+    padding-left: 10px;
+    width: 50%;
+    height: 70%;
+  }
+}
+
 @media screen and (max-width: 665px) {
   .content__location {
     -webkit-box-orient: vertical;
@@ -425,7 +509,7 @@ a {
     margin-right: 0.2em;
   }
   .content__location span {
-    padding-left: 10px;
+    padding-left: 5px;
   }
 }
 
@@ -438,6 +522,14 @@ a {
   }
   .content__location br {
     display: none;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .content__location {
+    -webkit-box-pack: center;
+            justify-content: center;
+    text-align: center;
   }
 }
 
@@ -458,6 +550,12 @@ a {
 .content__school-diploma--spacing {
   margin: 0.7em 0;
   font-style: italic;
+}
+
+@media screen and (max-width: 902px) {
+  .content__school-diploma {
+    width: 87%;
+  }
 }
 
 @media screen and (max-width: 665px) {

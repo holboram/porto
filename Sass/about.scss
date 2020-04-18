@@ -303,6 +303,9 @@ a {
   flex-flow: column wrap;
   justify-content: center;
   align-content: center;
+  @include laptop-S {
+    font-size: 90%;
+  }
 
   @include tablet {
     font-size: 82%;
@@ -388,6 +391,54 @@ a {
       width: 0;
 
     }
+    @include laptop {
+      width: 85%;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-top: 50px solid $quaternary;
+        border-left: 320px solid transparent;
+        width: 0;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-bottom: 50px solid $quaternary;
+        border-right: 320px solid transparent;
+        width: 0;
+
+      }
+    }
+    @include laptop-S {
+      width: 80%;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-top: 55px solid $quaternary;
+        border-left: 320px solid transparent;
+        width: 0;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-bottom: 55px solid $quaternary;
+        border-right: 320px solid transparent;
+        width: 0;
+
+      }
+    }
 
     @include tablet {
       width: 80%;
@@ -467,13 +518,44 @@ a {
     display: flex;
     width: 40%;
     margin-right: 1em;
+
+    & span {
+      padding-left: 10px;
+    }
+    @include laptop {
+      // flex-flow: row wrap;
+      width: 50%;
+      margin-right: 0.2em;
+
+      & span {
+        // align-self: center;
+        padding-left: 10px;
+        width: 50%;
+
+      }
+
+    }
+    @include laptop-S {
+      flex-flow: row wrap;
+      width: 50%;
+      margin-right: 0.2em;
+
+      & span {
+        // align-self: center;
+        padding-left: 10px;
+        width: 50%;
+        height: 70%;
+
+      }
+
+    }
     @include tablet {
       flex-flow: column wrap;
       width: 100%;
       margin-right: 0.2em;
 
       & span {
-        padding-left: 10px;
+        padding-left: 5px;
 
       }
 
@@ -486,6 +568,10 @@ a {
         display: none;
       }
 
+    }
+    @include mobile {
+      justify-content: center;
+      text-align: center;
     }
   }
 
@@ -502,6 +588,9 @@ a {
     &--spacing {
       margin: 0.7em 0;
       font-style: italic;
+    }
+    @include laptop {
+      width: 87%;
     }
     @include tablet {
       width: 85%;

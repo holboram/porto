@@ -381,6 +381,9 @@ a {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  @include laptop-S {
+    font-size: 93%;
+  }
   @include tablet {
     font-size: 82%;
   }
