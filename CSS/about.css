@@ -580,3 +580,9 @@ a {
     display: none;
   }
 }
+
+@media screen and (max-width: 532px) {
+  .footer__copyright {
+    padding-bottom: 1em;
+  }
+}

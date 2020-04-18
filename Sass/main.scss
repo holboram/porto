@@ -591,4 +591,9 @@ a {
       display: none;
     }
   }
+  @include tablet-S {
+    &__copyright {
+      padding-bottom: 1em;
+    }
+  }
 }
