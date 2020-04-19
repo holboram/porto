@@ -53,10 +53,14 @@ $fonts: (
   title-container-subtitleTabletS: 120%,
   title-containerMobile: 86%,
   title-container-subtitleMobile: 120%,
+  content-design-icon: 1.4em,
   content-title: 2.4em,
   content-subtitle-project: 1.5em,
   content-article-about: 1.3em,
   content-diploma-highlight: 1.35em,
+  content-laptopS: 90%,
+  content-tablet: 82%,
+  content-tabletS: 75%,
   circle: 0.7em
 );
 $breakpoints: (
@@ -117,7 +121,7 @@ $breakpoints: (
 }
 
 %design-icon {
-  font-size: 1.4em;
+  font-size: map-get($fonts, content-design-icon);
   color: $secondary-color;
   @include mobile {
     display: none;
@@ -304,14 +308,14 @@ a {
   justify-content: center;
   align-content: center;
   @include laptop-S {
-    font-size: 90%;
+    font-size: map-get($fonts, content-laptopS);
   }
 
   @include tablet {
-    font-size: 82%;
+    font-size: map-get($fonts, content-tablet);
   }
   @include tablet-S {
-    font-size: 75%;
+    font-size: map-get($fonts, content-tabletS);
   }
 
   &__title {
@@ -395,23 +399,13 @@ a {
       width: 85%;
 
       &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
         border-top: 50px solid $quaternary;
         border-left: 320px solid transparent;
-        width: 0;
       }
 
       &:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
         border-bottom: 50px solid $quaternary;
         border-right: 320px solid transparent;
-        width: 0;
 
       }
     }
@@ -419,96 +413,49 @@ a {
       width: 80%;
 
       &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
         border-top: 55px solid $quaternary;
-        border-left: 320px solid transparent;
-        width: 0;
       }
 
       &:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
         border-bottom: 55px solid $quaternary;
-        border-right: 320px solid transparent;
-        width: 0;
 
       }
     }
 
     @include tablet {
-      width: 80%;
-
       &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
         border-top: 50px solid $quaternary;
         border-left: 310px solid transparent;
-        width: 0;
       }
 
       &:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
         border-bottom: 50px solid $quaternary;
         border-right: 310px solid transparent;
-        width: 0;
 
       }
     }
     @include tablet-S {
-      width: 80%;
       flex-flow: column wrap;
       align-content: center;
 
       &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
         border-top: 38px solid $quaternary;
-        border-left: 310px solid transparent;
-        width: 0;
       }
 
       &:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
         border-bottom: 38px solid $quaternary;
-        border-right: 310px solid transparent;
-        width: 0;
 
       }
     }
     @include mobile {
       &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
         border-top: 30px solid $quaternary;
         border-left: 210px solid transparent;
-        width: 0;
       }
 
       &:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
         border-bottom: 30px solid $quaternary;
         border-right: 210px solid transparent;
-        width: 0;
 
       }
     }
@@ -523,12 +470,10 @@ a {
       padding-left: 10px;
     }
     @include laptop {
-      // flex-flow: row wrap;
       width: 50%;
       margin-right: 0.2em;
 
       & span {
-        // align-self: center;
         padding-left: 10px;
         width: 50%;
 
@@ -537,13 +482,8 @@ a {
     }
     @include laptop-S {
       flex-flow: row wrap;
-      width: 50%;
-      margin-right: 0.2em;
 
       & span {
-        // align-self: center;
-        padding-left: 10px;
-        width: 50%;
         height: 70%;
 
       }
@@ -552,7 +492,6 @@ a {
     @include tablet {
       flex-flow: column wrap;
       width: 100%;
-      margin-right: 0.2em;
 
       & span {
         padding-left: 5px;
@@ -600,36 +539,6 @@ a {
       width: 100%;
     }
   }
-
-  // &__article {
-  //   margin: map-get($margin, content-title-article);
-  //   flex-basis: 34%;
-  //   display: flex;
-  //   flex-flow: column wrap;
-  //   justify-content: flex-end;
-  //   color: $secondary-color;
-  //   min-height: 30em;
-  //   @include tablet-S {
-  //     min-height: 20em;
-  //   }
-  // }
-
-  // &__subtitle-project {
-  //   min-height: 3em;
-  //   padding-left: map-get($padding, subtitle-project);
-  //   font-family: 'Cutive Mono', monospace;
-  //   font-size: get-map($fonts, content-subtitle-project);
-  //
-  // }
-
-  // @include tablet {
-  //   flex-direction: column;
-  //   align-content: center;
-  //   margin: map-get($margin, content-tablet);
-  // }
-  // @include tablet-S {
-  //   margin: map-get($margin, content-tabletS);
-  // }
 }
 
 .footer {
