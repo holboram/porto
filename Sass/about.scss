@@ -40,6 +40,8 @@ $padding: (
   footer: (2em 15em),
   icon-footer: 7px,
   subtitle-project: 2em,
+  content-location-span: 10px,
+  content-locationTablet-span: 5px,
   footer-laptop: 2em 0
 );
 $fonts: (
@@ -474,14 +476,13 @@ a {
     margin-right: map-get($margin, content-location);
 
     & span {
-      padding-left: 10px;
+      padding-left: map-get($padding, content-location-span);
     }
     @include laptop {
       width: 50%;
       margin-right: map-get($margin, content-locationLaptop);
 
       & span {
-        padding-left: 10px;
         width: 50%;
 
       }
@@ -501,7 +502,7 @@ a {
       width: 100%;
 
       & span {
-        padding-left: 5px;
+        padding-left: map-get($padding, content-locationTablet-span);
 
       }
 
