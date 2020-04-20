@@ -100,16 +100,38 @@
         <div class="nav-bar__nav-right">
           <a class="nav-bar__link" href="index.html">Projects</a>
           <a class="nav-bar__link" href="about.html">About</a>
-          <a class="nav-bar__linknav-bar__link--highlight-underline" href="contact.html">Contact</a>
+          <a class="nav-bar__link nav-bar__link--highlight-underline" href="contact.html">Contact</a>
         </div>
       </nav>
     </header>
 
     <main>
 
-      <section class="content">
+      <form class="content">
         <h1 class="content__title">CONTACT</h1>
-      </section>
+
+        <div class="content__field">
+          <label for="first-name">First name</label>
+          <input class="content__input" type="text" id="first-name" name="first-name">
+          <label for="last-name">Last name</label>
+          <input class="content__input" type="text" id="last-name" name="last-name">
+          <label for="email">Email address</label>
+          <input class="content__input" type="text" id="email" name="email">
+        </div>
+
+        <div class="content__field">
+          <label for="contact">Contact<br><small>Telephone number, Skype name or WhatsApp</small></label>
+          <input class="content__input" type="text" id="email" name="email">
+          <label for="website">Website</label>
+          <input class="content__input" type="text" id="website" name="website">
+          <label for="website">Message</label>
+          <input class="content__input content__input--larger" type="text" id="message" name="message">
+        </div>
+
+        <button class="content__field" type="submit" value="Submit">Submit</button>
+        <button class="content__field" type="reset" value="Reset">Reset</button>
+
+      </form>
     </main>
 
     <footer>
