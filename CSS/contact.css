@@ -265,13 +265,25 @@ a {
 
 .content__field {
   font-size: 1.3em;
+  margin: 0.8em;
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
           flex-flow: column wrap;
-  align-content: center;
+  align-content: flex-end;
   width: 34.5%;
+}
+
+.content__field--align {
+  align-content: flex-start;
+}
+
+.content__field--resize {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-flow: row wrap;
+  width: 40%;
 }
 
 .content__input {
@@ -281,6 +293,10 @@ a {
 
 .content__input--taller {
   height: 16.2em;
+}
+
+label:nth-child(n) {
+  mix-blend-mode: difference;
 }
 
 .footer {
