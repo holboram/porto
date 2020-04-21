@@ -348,6 +348,16 @@ a {
     align-content: flex-end;
     width: 34.5%;
 
+    & label {
+      mix-blend-mode: difference;
+    }
+
+    & span {
+      color: red;
+      margin-left: 0;
+      font-size: 80%;
+    }
+
     &--align {
       align-content: flex-start;
     }
@@ -356,20 +366,20 @@ a {
       flex-flow: row wrap;
       width: 40%;
     }
+
   }
 
   &__input {
     width: 50%;
     margin-bottom: 2em;
+    background: $tertiary-color;
+    border: none;
+    height: 2em;
 
     &--taller {
-      height: 16.2em;
+      height: 15.4em;
     }
   }
-}
-
-label:nth-child(n) {
-  mix-blend-mode: difference;
 }
 
 .footer {

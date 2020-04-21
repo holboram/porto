@@ -275,6 +275,16 @@ a {
   width: 34.5%;
 }
 
+.content__field label {
+  mix-blend-mode: difference;
+}
+
+.content__field span {
+  color: red;
+  margin-left: 0;
+  font-size: 80%;
+}
+
 .content__field--align {
   align-content: flex-start;
 }
@@ -289,14 +299,13 @@ a {
 .content__input {
   width: 50%;
   margin-bottom: 2em;
+  background: #eae7d8;
+  border: none;
+  height: 2em;
 }
 
 .content__input--taller {
-  height: 16.2em;
-}
-
-label:nth-child(n) {
-  mix-blend-mode: difference;
+  height: 15.4em;
 }
 
 .footer {
