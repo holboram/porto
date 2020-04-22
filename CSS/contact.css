@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat+Subrayada|Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Baloo+2|Roboto:500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap");
+.content__field textarea:focus, .content__input:focus {
+  box-shadow: 0 0 15px 5px #b0e0ee;
+  border: 2px solid #bebede;
+}
+
 html {
   background: #fff;
 }
@@ -275,14 +280,15 @@ a {
   width: 34.5%;
 }
 
-.content__field label {
-  mix-blend-mode: difference;
-}
-
 .content__field span {
   color: red;
   margin-left: 0;
   font-size: 80%;
+}
+
+.content__field label {
+  color: #eae7d8;
+  mix-blend-mode: difference;
 }
 
 .content__field--align {
@@ -296,7 +302,13 @@ a {
   width: 40%;
 }
 
+.content__field textarea {
+  background: #eae7d8;
+}
+
 .content__input {
+  -webkit-box-align: start;
+          align-items: flex-start;
   width: 50%;
   margin-bottom: 2em;
   background: #eae7d8;
@@ -306,6 +318,18 @@ a {
 
 .content__input--taller {
   height: 15.4em;
+}
+
+.content button {
+  margin-right: 0.8em;
+  border: none;
+  border-radius: 0;
+  height: 2.3em;
+  width: 4.3em;
+  background: #5F4D18;
+  color: #f6b601;
+  font-size: 110%;
+  font-weight: 800;
 }
 
 .footer {

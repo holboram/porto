@@ -137,6 +137,13 @@ $breakpoints: (
   }
 }
 
+%highlight-input {
+  &:focus {
+    box-shadow: 0 0 15px 5px #b0e0ee;
+    border: 2px solid #bebede;
+  }
+}
+
 html {
   background: #fff;
 }
@@ -348,14 +355,15 @@ a {
     align-content: flex-end;
     width: 34.5%;
 
-    & label {
-      mix-blend-mode: difference;
-    }
-
     & span {
       color: red;
       margin-left: 0;
       font-size: 80%;
+    }
+
+    & label {
+      color: $tertiary-color;
+      mix-blend-mode: difference;
     }
 
     &--align {
@@ -367,18 +375,39 @@ a {
       width: 40%;
     }
 
+    & textarea {
+      background: $tertiary-color;
+
+      @extend %highlight-input;
+    }
+
   }
 
   &__input {
+    align-items: flex-start;
     width: 50%;
     margin-bottom: 2em;
     background: $tertiary-color;
     border: none;
     height: 2em;
 
+    @extend %highlight-input;
+
     &--taller {
       height: 15.4em;
     }
+  }
+
+  & button {
+    margin-right: map-get($margin, content-about-article);
+    border: none;
+    border-radius: 0;
+    height: 2.3em;
+    width: 4.3em;
+    background: $quinary;
+    color: $secondary-color;
+    font-size: 110%;
+    font-weight: 800;
   }
 }
 

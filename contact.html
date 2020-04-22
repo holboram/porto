@@ -107,16 +107,16 @@
 
     <main>
 
-      <form class="content">
+      <form class="content" id="form">
         <h1 class="content__title">CONTACT</h1>
 
         <div class="content__field">
-          <label for="first-name">First name<span>*</span></label>
-          <input class="content__input" type="text" id="first-name" name="first-name">
-          <label for="last-name">Last name<span>*</span></label>
-          <input class="content__input" type="text" id="last-name" name="last-name">
-          <label for="email">Email address<span>*</span></label>
-          <input class="content__input" type="text" id="email" name="email">
+          <div><label>First name</label><span>*</span></div>
+          <input class="content__input" type="text" id="first-name" name="first-name" required>
+          <div><label for="last-name">Last name</label><span>*</span></div>
+          <input class="content__input" type="text" id="last-name" name="last-name" required>
+          <div><label for="email">Email address</label><span>*</span></div>
+          <input class="content__input" type="text" id="email" name="email" required>
           <label for="contact">Contact<br>
             <small>Telephone number, Skype name or WhatsApp</small>
           </label>
@@ -127,8 +127,10 @@
         <div class="content__field content__field--align">
           <label for="website">Website</label>
           <input class="content__input" type="text" id="website" name="website">
-          <label for="website">Message<span>*</span></label>
-          <input class="content__input content__input--taller" type="text" id="message" name="message">
+          <div><label for="website">Message</label><span>*</span></div>
+          <!-- <input class="content__input content__input--taller" type="text" id="message" name="message" required> -->
+          <textarea placeholder="Enter message here..." rows="14" cols="40" name="comment" form="content" required></textarea>
+
         </div>
 
         <div class="content__field content__field--resize">
@@ -137,6 +139,7 @@
         </div>
 
       </form>
+
     </main>
 
     <footer>
