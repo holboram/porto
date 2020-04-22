@@ -306,7 +306,6 @@ a {
 
     &__icon-header {
       display: flex;
-      // justify-content: space-evenly;
       color: $tertiary-color;
       font-size: map-get($fonts, toggle-area-icon-headerTableS);
 
@@ -324,6 +323,10 @@ a {
   justify-content: center;
   align-content: center;
   color: $tertiary-color;
+  @include mobile {
+    flex-flow: column wrap;
+    max-width: 100%;
+  }
   @include laptop-S {
     font-size: map-get($fonts, content-laptopS);
   }
@@ -354,6 +357,10 @@ a {
     flex-flow: column wrap;
     align-content: flex-end;
     width: 34.5%;
+    @include mobile {
+      width: 100%;
+      align-content: center;
+    }
 
     & span {
       color: red;
@@ -368,15 +375,24 @@ a {
 
     &--align {
       align-content: flex-start;
+      @include mobile {
+        align-content: center;
+      }
+
     }
 
     &--resize {
       flex-flow: row wrap;
       width: 40%;
+      @include mobile {
+        width: 95%;
+      }
     }
 
     & textarea {
       background: $tertiary-color;
+      border: none;
+      height: 19em;
 
       @extend %highlight-input;
     }

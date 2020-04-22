@@ -234,6 +234,15 @@ a {
   color: #eae7d8;
 }
 
+@media screen and (max-width: 420px) {
+  .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-flow: column wrap;
+    max-width: 100%;
+  }
+}
+
 @media screen and (max-width: 826px) {
   .content {
     font-size: 90%;
@@ -280,6 +289,13 @@ a {
   width: 34.5%;
 }
 
+@media screen and (max-width: 420px) {
+  .content__field {
+    width: 100%;
+    align-content: center;
+  }
+}
+
 .content__field span {
   color: red;
   margin-left: 0;
@@ -295,6 +311,12 @@ a {
   align-content: flex-start;
 }
 
+@media screen and (max-width: 420px) {
+  .content__field--align {
+    align-content: center;
+  }
+}
+
 .content__field--resize {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -302,8 +324,16 @@ a {
   width: 40%;
 }
 
+@media screen and (max-width: 420px) {
+  .content__field--resize {
+    width: 95%;
+  }
+}
+
 .content__field textarea {
   background: #eae7d8;
+  border: none;
+  height: 19em;
 }
 
 .content__input {
