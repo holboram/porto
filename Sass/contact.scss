@@ -78,7 +78,9 @@ $breakpoints: (
   laptop-S: 826px,
   tablet: 665px,
   tablet-S: 532px,
-  mobile: 420px
+  mobile: 420px,
+  mobile-S: 370px,
+  mobile-XS: 280px
 );
 @mixin logo {
   color: $secondary-color;
@@ -125,6 +127,16 @@ $breakpoints: (
 }
 @mixin mobile {
   @media screen and (max-width: map-get($breakpoints, mobile)) {
+    @content;
+  }
+}
+@mixin mobile-S {
+  @media screen and (max-width: map-get($breakpoints, mobile-S)) {
+    @content;
+  }
+}
+@mixin mobile-XS {
+  @media screen and (max-width: map-get($breakpoints, mobile-XS)) {
     @content;
   }
 }
@@ -357,26 +369,20 @@ a {
     flex-flow: column wrap;
     align-content: flex-end;
     width: 34.5%;
-    @include mobile {
+    @include tablet-S {
       width: 100%;
       align-content: center;
-    }
 
-    & span {
-      color: red;
-      margin-left: 0;
-      font-size: 80%;
-    }
-
-    & label {
-      color: $tertiary-color;
-      mix-blend-mode: difference;
+      &--no-bottom {
+        margin-bottom: 0;
+      }
     }
 
     &--align {
       align-content: flex-start;
-      @include mobile {
+      @include tablet-S {
         align-content: center;
+        margin-top: 0;
       }
 
     }
@@ -384,19 +390,37 @@ a {
     &--resize {
       flex-flow: row wrap;
       width: 40%;
-      @include mobile {
-        width: 95%;
+      @include tablet-S {
+        width: 100%;
+        justify-content: center;
       }
     }
 
-    & textarea {
-      background: $tertiary-color;
-      border: none;
-      height: 19em;
+  }
 
-      @extend %highlight-input;
+  &__small {
+    & br {
+      display: none;
     }
+    @include mobile-S {
+      & br {
+        display: inline;
+      }
+    }
+    @include mobile-XS {
+      display: none;
+    }
+  }
 
+  &__label {
+    color: $tertiary-color;
+    mix-blend-mode: difference;
+  }
+
+  &__requierd {
+    color: red;
+    margin-left: 0;
+    font-size: 80%;
   }
 
   &__input {
@@ -408,13 +432,27 @@ a {
     height: 2em;
 
     @extend %highlight-input;
+    @include tablet-S {
+      width: 73%;
 
-    &--taller {
-      height: 15.4em;
+    }
+    @include mobile {
+      width: 70%;
+    }
+    @include mobile-XS {
+      width: 93%;
     }
   }
 
-  & button {
+  &__textarea {
+    background: $tertiary-color;
+    border: none;
+    height: 19em;
+
+    @extend %highlight-input;
+  }
+
+  &__button {
     margin-right: map-get($margin, content-about-article);
     border: none;
     border-radius: 0;

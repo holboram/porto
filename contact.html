@@ -110,29 +110,29 @@
       <form class="content" id="content">
         <h1 class="content__title">CONTACT</h1>
 
-        <div class="content__field">
-          <div><label>First name</label><span>*</span></div>
+        <div class="content__field content__field--no-bottom">
+          <div><label class="content__label" for="first-name">First name</label><span class=" content__requierd">*</span></div>
           <input class="content__input" type="text" id="first-name" name="first-name" required>
-          <div><label for="last-name">Last name</label><span>*</span></div>
+          <div><label class="content__label" for="last-name">Last name</label><span class="content__requierd">*</span></div>
           <input class="content__input" type="text" id="last-name" name="last-name" required>
-          <div><label for="email">Email address</label><span>*</span></div>
+          <div><label class="content__label" for="email">Email address</label><span class="content__requierd">*</span></div>
           <input class="content__input" type="text" id="email" name="email" required>
-          <label for="contact">Contact<br>
-            <small>Telephone number, Skype name or WhatsApp</small>
+          <label class="content__label" for="contact">Contact<br>
+            <small class="content__small">Telephone number, Skype name or<br> WhatsApp</small>
           </label>
           <input class="content__input" type="text" id="email" name="email">
         </div>
 
         <div class="content__field content__field--align">
-          <label for="website">Website</label>
+          <label class="content__label" for="website">Website</label>
           <input class="content__input" type="text" id="website" name="website">
-          <div><label for="website">Message</label><span>*</span></div>
-          <textarea placeholder="Enter message here..." name="comment" form="content" required></textarea>
+          <div><label class="content__label" for="website">Message</label><span class="content__requierd">*</span></div>
+          <textarea class="content__textarea" placeholder="Enter message here..." name="comment" form="content" required></textarea>
         </div>
 
         <div class="content__field content__field--resize">
-          <button type="submit" value="Submit">Submit</button>
-          <button type="reset" value="Reset">Clear</button>
+          <button class="content__button" type="submit" value="Submit">Submit</button>
+          <button class="content__button" type="reset" value="Reset">Clear</button>
         </div>
 
       </form>

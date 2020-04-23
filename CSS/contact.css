@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat+Subrayada|Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Baloo+2|Roboto:500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap");
-.content__field textarea:focus, .content__input:focus {
+.content__input:focus, .content__textarea:focus {
   box-shadow: 0 0 15px 5px #b0e0ee;
   border: 2px solid #bebede;
 }
@@ -289,31 +289,24 @@ a {
   width: 34.5%;
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 532px) {
   .content__field {
     width: 100%;
     align-content: center;
   }
-}
-
-.content__field span {
-  color: red;
-  margin-left: 0;
-  font-size: 80%;
-}
-
-.content__field label {
-  color: #eae7d8;
-  mix-blend-mode: difference;
+  .content__field--no-bottom {
+    margin-bottom: 0;
+  }
 }
 
 .content__field--align {
   align-content: flex-start;
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 532px) {
   .content__field--align {
     align-content: center;
+    margin-top: 0;
   }
 }
 
@@ -324,16 +317,39 @@ a {
   width: 40%;
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 532px) {
   .content__field--resize {
-    width: 95%;
+    width: 100%;
+    -webkit-box-pack: center;
+            justify-content: center;
   }
 }
 
-.content__field textarea {
-  background: #eae7d8;
-  border: none;
-  height: 19em;
+.content__small br {
+  display: none;
+}
+
+@media screen and (max-width: 370px) {
+  .content__small br {
+    display: inline;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .content__small {
+    display: none;
+  }
+}
+
+.content__label {
+  color: #eae7d8;
+  mix-blend-mode: difference;
+}
+
+.content__requierd {
+  color: red;
+  margin-left: 0;
+  font-size: 80%;
 }
 
 .content__input {
@@ -346,11 +362,31 @@ a {
   height: 2em;
 }
 
-.content__input--taller {
-  height: 15.4em;
+@media screen and (max-width: 532px) {
+  .content__input {
+    width: 73%;
+  }
 }
 
-.content button {
+@media screen and (max-width: 420px) {
+  .content__input {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .content__input {
+    width: 93%;
+  }
+}
+
+.content__textarea {
+  background: #eae7d8;
+  border: none;
+  height: 19em;
+}
+
+.content__button {
   margin-right: 0.8em;
   border: none;
   border-radius: 0;
