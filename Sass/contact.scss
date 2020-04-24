@@ -335,10 +335,7 @@ a {
   justify-content: center;
   align-content: center;
   color: $tertiary-color;
-  @include mobile {
-    flex-flow: column wrap;
-    max-width: 100%;
-  }
+
   @include laptop-S {
     font-size: map-get($fonts, content-laptopS);
   }
@@ -348,6 +345,10 @@ a {
   }
   @include tablet-S {
     font-size: map-get($fonts, content-tabletS);
+  }
+  @include mobile {
+    flex-flow: column wrap;
+    max-width: 100%;
   }
 
   &__title {
@@ -369,6 +370,12 @@ a {
     flex-flow: column wrap;
     align-content: flex-end;
     width: 34.5%;
+    @include laptop-S {
+      width: 33%;
+    }
+    @include tablet {
+      width: 33%;
+    }
     @include tablet-S {
       width: 100%;
       align-content: center;
@@ -390,6 +397,9 @@ a {
     &--resize {
       flex-flow: row wrap;
       width: 40%;
+      @include laptop-S {
+        width: 70%;
+      }
       @include tablet-S {
         width: 100%;
         justify-content: center;
@@ -432,6 +442,10 @@ a {
     height: 2em;
 
     @extend %highlight-input;
+    @include laptop-S {
+      width: 100%;
+
+    }
     @include tablet-S {
       width: 73%;
 
