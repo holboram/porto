@@ -327,7 +327,7 @@ a {
   position: absolute;
   top: 0;
   right: 0;
-  border-top: 100px solid #64876f;
+  border-top: 100px solid #241000;
   border-left: 310px solid transparent;
   width: 0;
 }
@@ -337,7 +337,7 @@ a {
   position: absolute;
   bottom: 0;
   left: 0;
-  border-bottom: 100px solid #64876f;
+  border-bottom: 100px solid #241000;
   border-right: 310px solid transparent;
   width: 0;
 }
@@ -347,11 +347,11 @@ a {
     width: 85%;
   }
   .content__article-about:before {
-    border-top: 50px solid #64876f;
+    border-top: 50px solid #241000;
     border-left: 320px solid transparent;
   }
   .content__article-about:after {
-    border-bottom: 50px solid #64876f;
+    border-bottom: 50px solid #241000;
     border-right: 320px solid transparent;
   }
 }
@@ -361,20 +361,20 @@ a {
     width: 80%;
   }
   .content__article-about:before {
-    border-top: 55px solid #64876f;
+    border-top: 55px solid #241000;
   }
   .content__article-about:after {
-    border-bottom: 55px solid #64876f;
+    border-bottom: 55px solid #241000;
   }
 }
 
 @media screen and (max-width: 665px) {
   .content__article-about:before {
-    border-top: 50px solid #64876f;
+    border-top: 50px solid #241000;
     border-left: 310px solid transparent;
   }
   .content__article-about:after {
-    border-bottom: 50px solid #64876f;
+    border-bottom: 50px solid #241000;
     border-right: 310px solid transparent;
   }
 }
@@ -387,20 +387,20 @@ a {
     align-content: center;
   }
   .content__article-about:before {
-    border-top: 38px solid #64876f;
+    border-top: 38px solid #241000;
   }
   .content__article-about:after {
-    border-bottom: 38px solid #64876f;
+    border-bottom: 38px solid #241000;
   }
 }
 
 @media screen and (max-width: 420px) {
   .content__article-about:before {
-    border-top: 30px solid #64876f;
+    border-top: 30px solid #241000;
     border-left: 210px solid transparent;
   }
   .content__article-about:after {
-    border-bottom: 30px solid #64876f;
+    border-bottom: 30px solid #241000;
     border-right: 210px solid transparent;
   }
 }

@@ -289,13 +289,7 @@ a {
   width: 34.5%;
 }
 
-@media screen and (max-width: 826px) {
-  .content__field {
-    width: 33%;
-  }
-}
-
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 902px) {
   .content__field {
     width: 33%;
   }
@@ -326,10 +320,18 @@ a {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
           flex-flow: row wrap;
-  width: 40%;
+  width: 51%;
 }
 
-@media screen and (max-width: 826px) {
+@media screen and (max-width: 1408px) {
+  .content__field--resize {
+    -webkit-box-pack: center;
+            justify-content: center;
+    width: 53%;
+  }
+}
+
+@media screen and (max-width: 902px) {
   .content__field--resize {
     width: 70%;
   }
@@ -340,22 +342,6 @@ a {
     width: 100%;
     -webkit-box-pack: center;
             justify-content: center;
-  }
-}
-
-.content__small br {
-  display: none;
-}
-
-@media screen and (max-width: 370px) {
-  .content__small br {
-    display: inline;
-  }
-}
-
-@media screen and (max-width: 280px) {
-  .content__small {
-    display: none;
   }
 }
 
@@ -371,16 +357,14 @@ a {
 }
 
 .content__input {
-  -webkit-box-align: start;
-          align-items: flex-start;
-  width: 50%;
+  width: 70%;
   margin-bottom: 2em;
   background: #eae7d8;
   border: none;
   height: 2em;
 }
 
-@media screen and (max-width: 826px) {
+@media screen and (max-width: 902px) {
   .content__input {
     width: 100%;
   }
@@ -407,7 +391,7 @@ a {
 .content__textarea {
   background: #eae7d8;
   border: none;
-  height: 19em;
+  height: 16.6em;
 }
 
 .content__button {
@@ -416,7 +400,7 @@ a {
   border-radius: 0;
   height: 2.3em;
   width: 4.3em;
-  background: #64876f;
+  background: #7701f6;
   color: #eae7d8;
   font-size: 110%;
   font-weight: 800;

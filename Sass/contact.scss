@@ -4,8 +4,10 @@
 $primary-color: #141824;
 $secondary-color: #f6b601;
 $tertiary-color: #eae7d8;
-$quaternary: #64876f;
-$quinary: #5F4D18;
+// $quaternary: #64876f;
+$quaternary: #7701f6;
+// $quinary: #5F4D18;
+$quinary: #7701f6;
 $scale: 0.9;
 $margin: (
   centru: (0 auto),
@@ -370,10 +372,7 @@ a {
     flex-flow: column wrap;
     align-content: flex-end;
     width: 34.5%;
-    @include laptop-S {
-      width: 33%;
-    }
-    @include tablet {
+    @include laptop {
       width: 33%;
     }
     @include tablet-S {
@@ -396,8 +395,12 @@ a {
 
     &--resize {
       flex-flow: row wrap;
-      width: 40%;
-      @include laptop-S {
+      width: 51%;
+      @include laptop-large {
+        justify-content: center;
+        width: 53%;
+      }
+      @include laptop {
         width: 70%;
       }
       @include tablet-S {
@@ -406,20 +409,6 @@ a {
       }
     }
 
-  }
-
-  &__small {
-    & br {
-      display: none;
-    }
-    @include mobile-S {
-      & br {
-        display: inline;
-      }
-    }
-    @include mobile-XS {
-      display: none;
-    }
   }
 
   &__label {
@@ -434,15 +423,14 @@ a {
   }
 
   &__input {
-    align-items: flex-start;
-    width: 50%;
+    width: 70%;
     margin-bottom: 2em;
     background: $tertiary-color;
     border: none;
     height: 2em;
 
     @extend %highlight-input;
-    @include laptop-S {
+    @include laptop {
       width: 100%;
 
     }
@@ -461,7 +449,7 @@ a {
   &__textarea {
     background: $tertiary-color;
     border: none;
-    height: 19em;
+    height: 16.6em;
 
     @extend %highlight-input;
   }
