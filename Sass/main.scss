@@ -85,13 +85,13 @@ $breakpoints: (
     font-size: map-get($fonts, highlight-project);
   }
 
-  .content__project-link:focus .arrow,
-  .content__project-link:hover .arrow {
+  .content__article--subeast:focus #arrow,
+  .content__article--subeast:hover #arrow {
     stroke-width: 6;
     stroke: $secondary-color;
   }
 
-  .arrow {
+  #arrow {
     transition: all 250ms ease-in-out;
   }
 }
@@ -192,6 +192,21 @@ a {
     }
   }
 
+  & #circle {
+    transform-origin: center center;
+    animation: spin 5s infinite;
+
+    @keyframes spin {
+      from {
+        transform: rotatey(0deg);
+      }
+
+      to {
+        transform: rotatey(360deg);
+      }
+    }
+  }
+
   &__nav-right {
     flex: 1;
     display: flex;
@@ -269,6 +284,21 @@ a {
 
     &:hover {
       transform: scale($scale - 0.03);
+    }
+  }
+
+  & #circle {
+    transform-origin: center center;
+    animation: spin 5s infinite;
+
+    @keyframes spin {
+      from {
+        transform: rotatey(0deg);
+      }
+
+      to {
+        transform: rotatey(360deg);
+      }
     }
   }
 

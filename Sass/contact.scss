@@ -204,6 +204,21 @@ a {
     }
   }
 
+  & #circle {
+    transform-origin: center center;
+    animation: spin 5s infinite;
+
+    @keyframes spin {
+      from {
+        transform: rotatey(0deg);
+      }
+
+      to {
+        transform: rotatey(360deg);
+      }
+    }
+  }
+
   &__nav-right {
     flex: 1;
     display: flex;
@@ -282,6 +297,21 @@ a {
 
     &:hover {
       transform: scale($scale - 0.03);
+    }
+  }
+
+  & #circle {
+    transform-origin: center center;
+    animation: spin 5s infinite;
+
+    @keyframes spin {
+      from {
+        transform: rotatey(0deg);
+      }
+
+      to {
+        transform: rotatey(360deg);
+      }
     }
   }
 
