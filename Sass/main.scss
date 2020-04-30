@@ -61,6 +61,7 @@ $breakpoints: (
   tablet-S: 532px,
   mobile: 420px
 );
+// TODO: when hovering, make the svg arrow blink
 @mixin highlight-project {
   transition-duration: 0.3s;
   box-sizing: border-box;
@@ -85,8 +86,8 @@ $breakpoints: (
     font-size: map-get($fonts, highlight-project);
   }
 
-  .content__article--subeast:focus #arrow,
-  .content__article--subeast:hover #arrow {
+  .content__article:focus #arrow,
+  .content__article:hover #arrow {
     stroke-width: 6;
     stroke: $secondary-color;
   }

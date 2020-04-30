@@ -109,25 +109,25 @@
 
     <main>
 
-      <form class="content" id="content">
+      <form action="#" class="content" id="content">
         <h1 class="content__title">CONTACT</h1>
 
         <div class="content__field content__field--no-bottom">
           <div><label class="content__label" for="first-name">First name</label><span class=" content__requierd">*</span></div>
-          <input class="content__input" type="text" id="first-name" name="first-name" required>
-          <div><label class="content__label" for="last-name">Last name</label><span class="content__requierd">*</span></div>
-          <input class="content__input" type="text" id="last-name" name="last-name" required>
+          <input class="content__input" type="text" id="first-name" name="first-name" required pattern="[A-Z][a-z]{2,}$" title="only letters are accepted & can't start with a space!"/>
+          <div><label class="content__label" for="last-name">Last name</label><span class=" content__requierd">*</span></div>
+          <input class="content__input" type="text" id="last-name" name="last-name" required pattern="[A-Z][a-z]{2,}$" title="only letters are accepted & can't start with a space!"/>
           <div><label class="content__label" for="email">Email address</label><span class="content__requierd">*</span></div>
-          <input class="content__input" type="text" id="email" name="email" required>
+          <input class="content__input content__input" type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="should be a valid email address & can't start with a space!"/>
           <label class="content__label" for="contact">Contact</label>
-          <input class="content__input" placeholder="e.g. Skype name or WhatsApp no." type="text" id="contact" name="email">
+          <input class="content__input" placeholder="e.g. Skype name or WhatsApp no." type="text" id="contact" name="contact">
         </div>
 
         <div class="content__field content__field--align">
           <label class="content__label" for="website">Website</label>
-          <input class="content__input" type="text" id="website" name="website">
-          <div><label class="content__label" for="website">Message</label><span class="content__requierd">*</span></div>
-          <textarea class="content__textarea" placeholder="Enter message here..." name="comment" form="content" required></textarea>
+          <input class="content__input" type="url" id="website" name="website" pattern="https?://.+" title="Include http://">
+          <div><label class="content__label" for="message">Message</label><span class="content__requierd">*</span></div>
+          <textarea class="content__textarea" id="message" name="message" form="content" minlength="5" placeholder="Enter message here..."  required /></textarea>
         </div>
 
         <div class="content__field content__field--resize">
