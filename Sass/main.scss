@@ -63,7 +63,7 @@ $breakpoints: (
 );
 // TODO: when hovering, make the svg arrow blink
 @mixin highlight-project {
-  transition-duration: 0.3s;
+  transition-duration: 0.4s;
   box-sizing: border-box;
   border: 20px solid $secondary-color;
   background-color: $primary-color;
@@ -84,16 +84,6 @@ $breakpoints: (
     display: flex;
     align-items: center;
     font-size: map-get($fonts, highlight-project);
-  }
-
-  .content__article:focus #arrow,
-  .content__article:hover #arrow {
-    stroke-width: 6;
-    stroke: $secondary-color;
-  }
-
-  #arrow {
-    transition: all 250ms ease-in-out;
   }
 }
 @mixin logo {
