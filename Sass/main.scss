@@ -1,10 +1,14 @@
+/*fonts*/
 @import url("https://fonts.googleapis.com/css?family=Montserrat+Subrayada|Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Baloo+2|Roboto:500&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+/*color var*/
 $primary-color: #141824;
 $secondary-color: #f6b601;
 $tertiary-color: #eae7d8;
+/*scale var*/
 $scale: 0.9;
+/*margin var*/
 $margin: (
   centru: (0 auto),
   centre: (auto 0),
@@ -21,6 +25,7 @@ $margin: (
   footer-social: 55px,
   footer-twoLaptop: 2em
 );
+/*padding var*/
 $padding: (
   avatar: (15px 100px 15px 100px),
   headerTablet: (15px 0),
@@ -32,6 +37,7 @@ $padding: (
   subtitle-project: 2em,
   footer-laptop: 2em 0
 );
+/*font var*/
 $fonts: (
   nav-right: 22px,
   burger: 43px,
@@ -53,6 +59,7 @@ $fonts: (
   content-title: 2.4em,
   content-subtitle-project: 1.5em
 );
+/*breakpoint var*/
 $breakpoints: (
   laptop-L: 1408px,
   laptop: 902px,
@@ -61,6 +68,7 @@ $breakpoints: (
   tablet-S: 532px,
   mobile: 420px
 );
+/*when hovering over project can go to that project*/
 @mixin highlight-project {
   transition-duration: 0.4s;
   box-sizing: border-box;
@@ -185,7 +193,6 @@ a {
   & #circle {
     transform-origin: center center;
     animation: spin 5s infinite;
-
     @keyframes spin {
       from {
         transform: rotatey(0deg);
@@ -280,7 +287,6 @@ a {
   & #circle {
     transform-origin: center center;
     animation: spin 5s infinite;
-
     @keyframes spin {
       from {
         transform: rotatey(0deg);

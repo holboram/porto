@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <title>Marius H. Portofolio</title>
-    <link rel="shortcut icon" href="images/portofolio_logo2.webp">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/647586bff5.js" crossorigin="anonymous"></script>
-    <link href="CSS/main.css" type="text/css" rel="stylesheet">
-  </head>
+<head>
+  <title>Marius H. Portofolio</title>
+  <link rel="shortcut icon" type="image/png" href="images/logo_portofolio.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/647586bff5.js" crossorigin="anonymous"></script>
+  <link href="CSS/main.css" type="text/css" rel="stylesheet">
+</head>
 
-  <body class="body">
-   <header>
-      <div class="toggle-area">
-        <svg xmlns="http://www.w3.org/2000/svg" width="38px" height="38px" viewbox="0 0 42 42">
-          <path id="circle" fill="#f6b601" stroke="none" stroke-width="1" d="M 17.00,0.47
+<body class="body">
+  <header>
+    <!--navigation area for small screens-->
+    <div class="toggle-area">
+      <!--portofolio logo sign-->
+      <svg xmlns="http://www.w3.org/2000/svg" width="38px" height="38px" viewbox="0 0 42 42">
+        <path id="circle" fill="#f6b601" stroke="none" stroke-width="1" d="M 17.00,0.47
                                                     C -7.73,6.51 -4.80,41.68 20.00,42.00
                                                     23.70,42.04 27.60,42.25 31.00,40.55
                                                     42.73,34.68 46.13,17.13 37.47,7.18
@@ -23,7 +25,7 @@
                                                     C 43.47,1.67 46.65,36.27 23.00,39.50
                                                     13.22,40.83 4.14,32.54 3.20,23.00
                                                     2.19,12.78 9.62,5.54 19.00,3.34 Z" />
-          <path id="sign" fill="#f6b601" stroke="none" stroke-width="1" d="M 18.00,15.07
+        <path id="sign" fill="#f6b601" stroke="none" stroke-width="1" d="M 18.00,15.07
                                                     C 18.00,15.07 13.02,15.07 13.02,15.07
                                                     9.09,15.78 8.07,18.31 10.37,19.98
                                                     12.06,21.21 15.93,20.99 18.00,21.00
@@ -43,25 +45,30 @@
                                                     23.15,4.85 20.06,4.70 18.74,7.30
                                                     17.85,9.03 18.01,12.99 18.00,15.07 Z" />
 
-        </svg>
-        <a href="contact.html"><i class="far fa-envelope toggle-area__icon-header"></i></a>
-        <a href="about.html"><i class="far fa-address-card toggle-area__icon-header"></i></a>
-        <a href="index.html"><i class="fas fa-briefcase toggle-area__icon-header toggle-area__icon-header--active"></i></a>
-        <a class="toggle-area__link-tg" href="#">
-          <div class="toggle-area__logo">
-            <h1>Marius Holbora</h1>
-            <h2>Web Developer</h2>
-          </div>
-        </a>
-        <label class="toggle-area__label" for="toggle">
-          <i class="fas fa-bars toggle-area__burger"></i>
-        </label>
-      </div>
-      <input type="checkbox" id="toggle">
-      <nav class="nav-bar">
-        <div class="nav-bar__link-lg">
-          <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewbox="0 0 42 42">
-            <path id="circle" fill="#f6b601" stroke="none" stroke-width="1" d="M 17.00,0.47
+      </svg>
+      <!--navigation icons for small screens-->
+      <a href="contact.html"><i class="far fa-envelope toggle-area__icon-header"></i></a>
+      <a href="about.html"><i class="far fa-address-card toggle-area__icon-header"></i></a>
+      <a href="index.html"><i class="fas fa-briefcase toggle-area__icon-header toggle-area__icon-header--active"></i></a>
+      <!--logo name-->
+      <a class="toggle-area__link-tg" href="#">
+        <div class="toggle-area__logo">
+          <h1>Marius Holbora</h1>
+          <h2>Web Developer</h2>
+        </div>
+      </a>
+      <!--burger icon for navigation-->
+      <label class="toggle-area__label" for="toggle">
+        <i class="fas fa-bars toggle-area__burger"></i>
+      </label>
+    </div>
+    <input type="checkbox" id="toggle">
+    <!--navigation area-->
+    <nav class="nav-bar">
+      <div class="nav-bar__link-lg">
+        <!--portofolio logo sign-->
+        <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewbox="0 0 42 42">
+          <path id="circle" fill="#f6b601" stroke="none" stroke-width="1" d="M 17.00,0.47
                                                  C -7.73,6.51 -4.80,41.68 20.00,42.00
                                                  23.70,42.04 27.60,42.25 31.00,40.55
                                                  42.73,34.68 46.13,17.13 37.47,7.18
@@ -70,7 +77,7 @@
                                                  C 43.47,1.67 46.65,36.27 23.00,39.50
                                                  13.22,40.83 4.14,32.54 3.20,23.00
                                                  2.19,12.78 9.62,5.54 19.00,3.34 Z" />
-            <path id="sign" fill="#f6b601" stroke="none" stroke-width="1" d="M 18.00,15.07
+          <path id="sign" fill="#f6b601" stroke="none" stroke-width="1" d="M 18.00,15.07
                                                  C 18.00,15.07 13.02,15.07 13.02,15.07
                                                  9.09,15.78 8.07,18.31 10.37,19.98
                                                  12.06,21.21 15.93,20.99 18.00,21.00
@@ -90,136 +97,146 @@
                                                  23.15,4.85 20.06,4.70 18.74,7.30
                                                  17.85,9.03 18.01,12.99 18.00,15.07 Z" />
 
-          </svg>
-          <a href="#">
-            <div class="nav-bar__logo">
-              <h1>Marius Holbora</h1>
-              <h2>Web Developer</h2>
-            </div>
-          </a>
-        </div>
-        <div class="nav-bar__nav-right">
-          <a class="nav-bar__link nav-bar__link--highlight-underline" href="index.html">Projects</a>
-          <a class="nav-bar__link" href="about.html">About</a>
-          <a class="nav-bar__link" href="contact.html">Contact</a>
-        </div>
-      </nav>
-    </header>
-
-    <main>
-
-      <section class="title-container">
-        <header class="title-container__title">
-          <h1>Web Developer</h1>
-          <h2 class="title-container__subtitle"><q>Truth can only be found in one place: the code.</q> – Robert Cecil Martin
-
-</h2>
-        </header>
-      </section>
-
-      <section class="content">
-        <h1 class="content__title">PROJECTS</h1>
-        <a href="#" class="content__article content__article--subeast">
-          <img class="content__project-logo" src="images/Label_logo.png">
-          <p class="content__subtitle-project">HTML5/CSS3
-          </p>
-          <div class="content__project-link">
-            <h4>See project</h4>
+        </svg>
+        <!--logo name-->
+        <a href="#">
+          <div class="nav-bar__logo">
+            <h1>Marius Holbora</h1>
+            <h2>Web Developer</h2>
           </div>
         </a>
-        <div class="content__article content__article--reshape">
-          <a href="#" class="content__article content__article--dogsTrust content__article--resize">
-            <img class="content__project-logo" src="images/dog_trust.png">
-            <p class="content__subtitle-project content__subtitle-project--color">HTML5/CSS3
-            </p>
-            <div class="content__project-link">
-              <h4>See project</h4>
-            </div>
-          </a>
-          <a href="#" class="content__article content__article--poolspot content__article--resize">
-            <img class="content__project-logo" src="images/poolspot.png">
-            <p class="content__subtitle-project content__subtitle-project--color">HTML5/CSS3
-            </p>
-            <div class="content__project-link">
-              <h4>See project</h4>
-            </div>
-          </a>
+      </div>
+      <!--navigation links-->
+      <div class="nav-bar__nav-right">
+        <a class="nav-bar__link nav-bar__link--highlight-underline" href="index.html">Projects</a>
+        <a class="nav-bar__link" href="about.html">About</a>
+        <a class="nav-bar__link" href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!--title-->
+    <section class="title-container">
+      <header class="title-container__title">
+        <h1>Web Developer</h1>
+        <h2 class="title-container__subtitle"><q>Truth can only be found in one place: the code.</q> – Robert Cecil Martin</h2>
+      </header>
+    </section>
+
+    <section class="content">
+      <h1 class="content__title">PROJECTS</h1>
+      <!--subeast project-->
+      <a href="#" class="content__article content__article--subeast">
+        <img class="content__project-logo" src="images/Label_logo.png">
+        <p class="content__subtitle-project">HTML5/CSS3
+        </p>
+        <div class="content__project-link">
+          <h4>See project</h4>
         </div>
-        <div class="content__article content__article--reshape">
-          <a href="#" class="content__article content__article--clean content__article--resize">
-            <img class="content__project-logo" src="images/clean.png">
-            <p class="content__subtitle-project content__subtitle-project--color">HTML5/CSS3
-            </p>
-            <div class="content__project-link">
-              <h4>See project</h4>
-            </div>
-          </a>
-          <a href="#" class="content__article content__article--electroalfa content__article--resize">
-            <img class="content__project-logo" src="images/electroalfa.png">
-            <p class="content__subtitle-project content__subtitle-project--color">HTML5/CSS3
-            </p>
-            <div class="content__project-link">
-              <h4>See project</h4>
-            </div>
-          </a>
-        </div>
-        <a href="#" class="content__article content__article--fan-courier">
-          <img class="content__project-logo" src="images/fan_courier.png">
+      </a>
+      <div class="content__article content__article--reshape">
+        <!--dogtrust project-->
+        <a href="#" class="content__article content__article--dogsTrust content__article--resize">
+          <img class="content__project-logo" src="images/dog_trust.png">
           <p class="content__subtitle-project content__subtitle-project--color">HTML5/CSS3
           </p>
           <div class="content__project-link">
             <h4>See project</h4>
           </div>
         </a>
-      </section>
-    </main>
-
-    <footer>
-      <div class="footer">
-        <div class="footer__links">
-          <div class="footer__two">
-            <img class="footer__image" src="images/Marius_70.jpg" alt="A photo of Marius Holbora" width="70" height="70">
-            <p class="footer__bio-info">
-              After having different professional experiences in various industries I decided that web development is the path I want to take. Therefore I passed a course in web development to start my new career. Dedication, pugnacity and curiosity
-              define my mind
-              set, I then would like to enter a company where I can share my skills and develop new ones. Getting a web development position would be the stepping stone to this new professional adventure.
-            </p>
-            <p>
-              Web Developer.
-              <br>
-              Available August 2020.
-            </p>
+        <!--poolspot project-->
+        <a href="#" class="content__article content__article--poolspot content__article--resize">
+          <img class="content__project-logo" src="images/poolspot.png">
+          <p class="content__subtitle-project content__subtitle-project--color">HTML5/CSS3
+          </p>
+          <div class="content__project-link">
+            <h4>See project</h4>
           </div>
-          <ul class="footer__social">
-            <li class="footer__item">
-              <a href="https://github.com/holboram" target="_blank" aria-label="View Marius Holbora on LinkedIn (opens in new window)">
-                <i class="fab fa-github footer__icon-footer"></i>
-              </a>
-              <p class="footer__description">
-                View
-                <a href="https://github.com/holboram" target="_blank" aria-label="(opens in new window)">@holboram</a>
-                on GitHub for open-source projects
-              </p>
-              <a class="footer__small" href="https://github.com/holboram" target="_blank" aria-label="(opens in new window)">@holboram</a>
-            </li>
-            <br>
-            <li class="footer__item">
-              <a href="https://www.linkedin.com/in/mariusholbora/" target="_blank" aria-label="View Marius Holbora on LinkedIn (opens in new window)">
-                <i class="fab fa-linkedin footer__icon-footer"></i>
-              </a>
-              <p class="footer__description">
-                View my
-                <a href="https://www.linkedin.com/in/mariusholbora/" target="_blank" aria-label="(opens in new window)">LinkedIn profile</a>
-              </p>
-              <a class="footer__small" href="https://www.linkedin.com/in/mariusholbora/" target="_blank" aria-label="(opens in new window)">LinkedIn profile</a>
-            </li>
-          </ul>
-        </div>
-        <small class="footer__copyright">Copyright © 2020
-          <a href="/">Marius Holbora Design</a>.</small>
+        </a>
       </div>
-    </footer>
+      <div class="content__article content__article--reshape">
+        <!--clean project-->
+        <a href="#" class="content__article content__article--clean content__article--resize">
+          <img class="content__project-logo" src="images/clean.png">
+          <p class="content__subtitle-project content__subtitle-project--color">HTML5/CSS3
+          </p>
+          <div class="content__project-link">
+            <h4>See project</h4>
+          </div>
+        </a>
+        <!--electroalfa project-->
+        <a href="#" class="content__article content__article--electroalfa content__article--resize">
+          <img class="content__project-logo" src="images/electroalfa.png">
+          <p class="content__subtitle-project content__subtitle-project--color">HTML5/CSS3
+          </p>
+          <div class="content__project-link">
+            <h4>See project</h4>
+          </div>
+        </a>
+      </div>
+      <!--fan-courier project-->
+      <a href="#" class="content__article content__article--fan-courier">
+        <img class="content__project-logo" src="images/fan_courier.png">
+        <p class="content__subtitle-project content__subtitle-project--color">HTML5/CSS3
+        </p>
+        <div class="content__project-link">
+          <h4>See project</h4>
+        </div>
+      </a>
+    </section>
+  </main>
 
-  </body>
+  <footer>
+    <div class="footer">
+      <div class="footer__links">
+        <!--image and bio info-->
+        <div class="footer__two">
+          <img class="footer__image" src="images/Marius_70.jpg" alt="A photo of Marius Holbora" width="70" height="70">
+          <p class="footer__bio-info">
+            After having different professional experiences in various industries I decided that web development is the path I want to take. Therefore I passed a course in web development to start my new career. Dedication, pugnacity and curiosity
+            define my mind
+            set, I then would like to enter a company where I can share my skills and develop new ones. Getting a web development position would be the stepping stone to this new professional adventure.
+          </p>
+          <p>
+            Web Developer.
+            <br>
+            Available August 2020.
+          </p>
+        </div>
+        <!--social media links-->
+        <ul class="footer__social">
+          <li class="footer__item">
+            <a href="https://github.com/holboram" target="_blank" aria-label="View Marius Holbora on LinkedIn (opens in new window)">
+              <i class="fab fa-github footer__icon-footer"></i>
+            </a>
+            <p class="footer__description">
+              View
+              <a href="https://github.com/holboram" target="_blank" aria-label="(opens in new window)">@holboram</a>
+              on GitHub for open-source projects
+            </p>
+            <a class="footer__small" href="https://github.com/holboram" target="_blank" aria-label="(opens in new window)">@holboram</a>
+          </li>
+          <br>
+          <li class="footer__item">
+            <a href="https://www.linkedin.com/in/mariusholbora/" target="_blank" aria-label="View Marius Holbora on LinkedIn (opens in new window)">
+              <i class="fab fa-linkedin footer__icon-footer"></i>
+            </a>
+            <p class="footer__description">
+              View my
+              <a href="https://www.linkedin.com/in/mariusholbora/" target="_blank" aria-label="(opens in new window)">LinkedIn profile</a>
+            </p>
+            <a class="footer__small" href="https://www.linkedin.com/in/mariusholbora/" target="_blank" aria-label="(opens in new window)">LinkedIn profile</a>
+          </li>
+        </ul>
+      </div>
+      <!--website copyright-->
+      <small class="footer__copyright">Copyright © 2020
+        <a href="/">Marius Holbora Design</a>.</small>
+    </div>
+  </footer>
+
+</body>
 
 </html>

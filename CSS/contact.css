@@ -1,6 +1,16 @@
+/*fonts*/
 @import url("https://fonts.googleapis.com/css?family=Montserrat+Subrayada|Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Baloo+2|Roboto:500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap");
+/*color var*/
+/*scale var*/
+/*margin var*/
+/*padding var*/
+/*font var*/
+/*breakpoint var*/
+/*highlight the navigation links*/
+/*underline the link where you are on the website*/
+/*different screen size*/
 .content__input:focus, .content__textarea:focus {
   box-shadow: 0 0 9px 2px #b0e0ee;
   border: 1.2px solid #bebede;
@@ -34,6 +44,7 @@ a {
   text-decoration: none;
 }
 
+/*navigation bar*/
 .nav-bar {
   display: flex;
   align-items: center;
@@ -233,6 +244,7 @@ a {
   }
 }
 
+/*main content*/
 .content {
   margin-bottom: 1.6em;
   display: flex;
@@ -405,6 +417,7 @@ a {
   font-weight: 800;
 }
 
+/*footer*/
 .footer {
   background-color: #f6b601;
   background-size: cover;

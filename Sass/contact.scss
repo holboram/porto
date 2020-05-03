@@ -1,12 +1,16 @@
+/*fonts*/
 @import url("https://fonts.googleapis.com/css?family=Montserrat+Subrayada|Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Baloo+2|Roboto:500&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+/*color var*/
 $primary-color: #141824;
 $secondary-color: #f6b601;
 $tertiary-color: #eae7d8;
 $quaternary: #64876f;
 $quinary: #5F4D18;
+/*scale var*/
 $scale: 0.9;
+/*margin var*/
 $margin: (
   centru: (0 auto),
   centre: (auto 0),
@@ -31,6 +35,7 @@ $margin: (
   footer-social: 55px,
   footer-twoLaptop: 2em
 );
+/*padding var*/
 $padding: (
   avatar: (15px 100px 15px 100px),
   headerTablet: (15px 0),
@@ -44,6 +49,7 @@ $padding: (
   content-locationTablet-span: 5px,
   footer-laptop: 2em 0
 );
+/*font var*/
 $fonts: (
   nav-right: 22px,
   burger: 43px,
@@ -72,6 +78,7 @@ $fonts: (
   content-tabletS: 75%,
   circle: 0.7em
 );
+/*breakpoint var*/
 $breakpoints: (
   laptop-L: 1408px,
   laptop: 902px,
@@ -87,12 +94,14 @@ $breakpoints: (
   transform: scale($scale);
   transition: all 500ms;
 }
+/*highlight the navigation links*/
 @mixin highlight {
   text-align: center;
   background-color: $secondary-color;
   color: $primary-color;
   transform: scale(1.22);
 }
+/*underline the link where you are on the website*/
 @mixin highlight-underline {
   text-decoration: underline;
   text-decoration-thickness: 3px;
@@ -100,6 +109,7 @@ $breakpoints: (
   text-decoration-color: $secondary-color;
   text-underline-offset: 50%;
 }
+/*different screen size*/
 @mixin laptop-large {
   @media screen and (max-width: map-get($breakpoints, laptop-L)) {
     @content;
@@ -183,7 +193,7 @@ main {
 a {
   text-decoration: none;
 }
-
+/*navigation bar*/
 .nav-bar {
   display: flex;
   align-items: center;
@@ -358,6 +368,7 @@ a {
   }
 }
 
+/*main content*/
 .content {
   margin-bottom: map-get($margin, contentMain);
   display: flex;
@@ -495,6 +506,7 @@ a {
   }
 }
 
+/*footer*/
 .footer {
   background-color: $secondary-color;
   background-size: cover;
