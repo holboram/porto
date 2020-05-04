@@ -9,6 +9,9 @@
 /*font var*/
 /*breakpoint var*/
 /*when hovering over project can go to that project*/
+/*highlight the navigation links*/
+/*underline the link where you are on the website*/
+/*different screen size*/
 html {
   background: #fff;
 }
@@ -37,6 +40,7 @@ a {
   text-decoration: none;
 }
 
+/*navigation bar*/
 .nav-bar {
   display: flex;
   align-items: center;
@@ -236,6 +240,7 @@ a {
   }
 }
 
+/*title*/
 .title-container {
   mix-blend-mode: difference;
   color: #eae7d8;
@@ -306,6 +311,7 @@ a {
   }
 }
 
+/*main content*/
 .content {
   margin-bottom: 1.6em;
   display: flex;
@@ -508,6 +514,7 @@ a {
   }
 }
 
+/*footer*/
 .footer {
   background-color: #f6b601;
   background-size: cover;

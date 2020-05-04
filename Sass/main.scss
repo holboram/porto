@@ -98,12 +98,14 @@ $breakpoints: (
   transform: scale($scale);
   transition: all 500ms;
 }
+/*highlight the navigation links*/
 @mixin highlight {
   text-align: center;
   background-color: $secondary-color;
   color: $primary-color;
   transform: scale(1.22);
 }
+/*underline the link where you are on the website*/
 @mixin highlight-underline {
   text-decoration: underline;
   text-decoration-thickness: 3px;
@@ -111,6 +113,7 @@ $breakpoints: (
   text-decoration-color: $secondary-color;
   text-underline-offset: 50%;
 }
+/*different screen size*/
 @mixin laptop-large {
   @media screen and (max-width: map-get($breakpoints, laptop-L)) {
     @content;
@@ -170,6 +173,7 @@ a {
   text-decoration: none;
 }
 
+/*navigation bar*/
 .nav-bar {
   display: flex;
   align-items: center;
@@ -343,6 +347,7 @@ a {
   }
 }
 
+/*title*/
 .title-container {
   mix-blend-mode: difference;
   color: $tertiary-color;
@@ -403,6 +408,7 @@ a {
   }
 }
 
+/*main content*/
 .content {
   margin-bottom: map-get($margin, contentMain);
   display: flex;
@@ -529,6 +535,7 @@ a {
   }
 }
 
+/*footer*/
 .footer {
   background-color: $secondary-color;
   background-size: cover;
